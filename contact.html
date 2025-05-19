@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 厦普林克国际物流</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#0052CC',
+                        'dark-bg': '#0F172A',
+                        'dark-card': '#1E293B',
+                        'dark-border': '#334155',
+                        'dark-text-primary': '#E2E8F0',
+                        'dark-text-secondary': '#94A3B8',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .contact-header-bg {
+            /* 图片来源: https://unsplash.com/photos/aerial-view-of-city-during-night-time-Ub9ll4B1hPM */
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1503428593586-e225b39bddfe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        /* 模拟地图的样式 */
+        .map-placeholder {
+            background-color: #334155; /* dark-border */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94A3B8; /* dark-text-secondary */
+            font-size: 1.5rem;
+            border-radius: 0.5rem;
+            min-height: 400px; /* 确保地图有足够的高度 */
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-dark-text-primary font-sans">
+
+    <!-- Navigation Bar (same as home.html) -->
+    <nav class="bg-dark-card shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0">
+                        <img class="h-10 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-sky-500.svg" alt="厦普林克物流Logo">
+                    </a>
+                    <span class="ml-3 text-xl font-semibold text-sky-400">厦普林克国际物流</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="home.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">首页</a>
+                        <a href="about.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">关于我们</a>
+                        <a href="services.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">服务中心</a>
+                        <a href="news.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">新闻中心</a>
+                        <a href="tracking.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">货物追踪</a>
+                        <a href="inquiry.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">在线询价</a>
+                        <a href="contact.html" class="bg-dark-bg text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">联系我们</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="bg-dark-card inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu-contact" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu-contact">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="home.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">首页</a>
+                <a href="about.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">关于我们</a>
+                <a href="services.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">服务中心</a>
+                <a href="news.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">新闻中心</a>
+                <a href="tracking.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">货物追踪</a>
+                <a href="inquiry.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">在线询价</a>
+                <a href="contact.html" class="bg-dark-bg text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">联系我们</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="contact-header-bg">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">联系我们</h1>
+            <p class="mt-6 max-w-3xl mx-auto text-xl text-gray-300">
+                我们随时准备为您提供专业的物流咨询与服务。期待与您的合作！
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Contact Information Section -->
+            <section id="contact-info" class="bg-dark-card shadow-xl rounded-lg p-6 sm:p-8">
+                <h2 class="text-2xl sm:text-3xl font-semibold text-dark-text-primary mb-6">联系方式</h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-lg font-medium text-sky-400 flex items-center">
+                            <i class="fas fa-map-marked-alt fa-fw mr-3"></i> 公司地址
+                        </h3>
+                        <p class="mt-1 text-dark-text-secondary">深圳市南山区科技园XX路XX大厦XX层</p>
+                        <p class="mt-1 text-dark-text-secondary">邮编: 518000</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-medium text-sky-400 flex items-center">
+                            <i class="fas fa-phone-volume fa-fw mr-3"></i> 联系电话
+                        </h3>
+                        <p class="mt-1 text-dark-text-secondary">总机: +86 755 1234 5678</p>
+                        <p class="mt-1 text-dark-text-secondary">客户服务: +86 755 8765 4321</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-medium text-sky-400 flex items-center">
+                            <i class="fas fa-envelope-open-text fa-fw mr-3"></i> 电子邮箱
+                        </h3>
+                        <p class="mt-1 text-dark-text-secondary">业务咨询: sales@sharplinker.com</p>
+                        <p class="mt-1 text-dark-text-secondary">客户支持: support@sharplinker.com</p>
+                        <p class="mt-1 text-dark-text-secondary">人力资源: hr@sharplinker.com</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-medium text-sky-400 flex items-center">
+                            <i class="fas fa-clock fa-fw mr-3"></i> 工作时间
+                        </h3>
+                        <p class="mt-1 text-dark-text-secondary">周一至周五: 9:00 AM - 6:00 PM (GMT+8)</p>
+                        <p class="mt-1 text-dark-text-secondary">周末及法定节假日休息</p>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-lg font-medium text-sky-400 mb-3">关注我们</h3>
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-gray-400 hover:text-sky-400 transition-colors duration-300" title="微信公众号">
+                                <i class="fab fa-weixin fa-2x"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-sky-400 transition-colors duration-300" title="LinkedIn">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-sky-400 transition-colors duration-300" title="微博">
+                                <i class="fab fa-weibo fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Form Section -->
+            <section id="contact-form-section" class="bg-dark-card shadow-xl rounded-lg p-6 sm:p-8">
+                <h2 class="text-2xl sm:text-3xl font-semibold text-dark-text-primary mb-6">给我们留言</h2>
+                <form id="contactForm" class="space-y-6">
+                    <div>
+                        <label for="contact-name" class="block text-sm font-medium text-dark-text-secondary">您的姓名 <span class="text-red-400">*</span></label>
+                        <input type="text" name="contact-name" id="contact-name" required autocomplete="name" class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="例如：李明">
+                    </div>
+                    <div>
+                        <label for="contact-email" class="block text-sm font-medium text-dark-text-secondary">电子邮箱 <span class="text-red-400">*</span></label>
+                        <input type="email" name="contact-email" id="contact-email" required autocomplete="email" class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="例如：liming@example.com">
+                    </div>
+                    <div>
+                        <label for="contact-phone" class="block text-sm font-medium text-dark-text-secondary">联系电话</label>
+                        <input type="tel" name="contact-phone" id="contact-phone" autocomplete="tel" class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="例如：13912345678">
+                    </div>
+                    <div>
+                        <label for="contact-subject" class="block text-sm font-medium text-dark-text-secondary">主题 <span class="text-red-400">*</span></label>
+                        <input type="text" name="contact-subject" id="contact-subject" required class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="例如：业务合作咨询">
+                    </div>
+                    <div>
+                        <label for="contact-message" class="block text-sm font-medium text-dark-text-secondary">留言内容 <span class="text-red-400">*</span></label>
+                        <textarea id="contact-message" name="contact-message" rows="5" required class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="请在此处填写您的详细需求或问题..."></textarea>
+                    </div>
+                    <div class="pt-2">
+                        <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-sky-500 hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-bg focus:ring-sky-500 transition-colors">
+                            <i class="fas fa-paper-plane mr-2"></i> 发送留言
+                        </button>
+                    </div>
+                </form>
+                <!-- Submission Success/Error Messages (Initially Hidden) -->
+                <div id="contact-form-feedback" class="mt-6 hidden"></div>
+            </section>
+        </div>
+
+        <!-- Map Section -->
+        <section id="map-section" class="mt-16">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-dark-text-primary mb-8 text-center">我们的位置</h2>
+            <div class="map-placeholder shadow-xl">
+                <i class="fas fa-map-marked-alt fa-3x text-sky-500"></i>
+                <span class="ml-4">地图加载中... (这是一个占位符)</span>
+            </div>
+            <p class="text-center mt-4 text-sm text-dark-text-secondary">
+                提示: 实际项目中此处应嵌入交互式地图 (如 Google Maps, 高德地图, 百度地图)。
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer (same as home.html) -->
+    <footer class="bg-dark-card border-t border-dark-border mt-16">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">关于我们</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="about.html#company-profile" class="text-base text-dark-text-secondary hover:text-dark-text-primary">公司简介</a></li>
+                        <li><a href="about.html#our-mission" class="text-base text-dark-text-secondary hover:text-dark-text-primary">企业文化</a></li>
+                        <li><a href="about.html#milestones" class="text-base text-dark-text-secondary hover:text-dark-text-primary">发展历程</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">核心服务</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="services.html#sea-freight" class="text-base text-dark-text-secondary hover:text-dark-text-primary">国际海运</a></li>
+                        <li><a href="services.html#air-freight" class="text-base text-dark-text-secondary hover:text-dark-text-primary">国际空运</a></li>
+                        <li><a href="services.html#land-transport" class="text-base text-dark-text-secondary hover:text-dark-text-primary">陆路运输</a></li>
+                        <li><a href="services.html#ecommerce-logistics" class="text-base text-dark-text-secondary hover:text-dark-text-primary">跨境电商物流</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">快速链接</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="tracking.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">货物追踪</a></li>
+                        <li><a href="inquiry.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">在线询价</a></li>
+                        <li><a href="news.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">新闻中心</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">联系我们</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-map-marker-alt mr-2 text-sky-400"></i> 深圳市XX区XX街道XX号</li>
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-phone-alt mr-2 text-sky-400"></i> +86 755 1234 5678</li>
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-envelope mr-2 text-sky-400"></i> info@sharplinker.com</li>
+                    </ul>
+                    <div class="mt-6 flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-gray-300"><span class="sr-only">微信公众号</span><i class="fab fa-weixin fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gray-300"><span class="sr-only">LinkedIn</span><i class="fab fa-linkedin fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-dark-border pt-8 md:flex md:items-center md:justify-between">
+                <p class="text-base text-dark-text-secondary md:mt-0 md:order-1">
+                    &copy; ${new Date().getFullYear()} 厦普林克国际物流 (深圳) 有限公司. All rights reserved.
+                </p>
+                <p class="mt-4 text-xs text-gray-500 md:mt-0 md:order-2">
+                    原型设计与实现 by AI Agent. 图片来源: Unsplash.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButtonContact = document.querySelector('[aria-controls="mobile-menu-contact"]');
+        const mobileMenuContact = document.getElementById('mobile-menu-contact');
+        if (mobileMenuButtonContact && mobileMenuContact) {
+            mobileMenuButtonContact.addEventListener('click', () => {
+                const isExpanded = mobileMenuButtonContact.getAttribute('aria-expanded') === 'true' || false;
+                mobileMenuButtonContact.setAttribute('aria-expanded', !isExpanded);
+                mobileMenuContact.classList.toggle('hidden');
+                const icon = mobileMenuButtonContact.querySelector('i');
+                if (icon) {
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                }
+            });
+        }
+
+        // Contact form submission simulation
+        const contactForm = document.getElementById('contactForm');
+        const contactFormFeedback = document.getElementById('contact-form-feedback');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                let isValid = true;
+                contactForm.querySelectorAll('[required]').forEach(input => {
+                    if (!input.value.trim()) {
+                        isValid = false;
+                        input.classList.add('border-red-500');
+                    } else {
+                        input.classList.remove('border-red-500');
+                    }
+                });
+
+                contactFormFeedback.classList.remove('hidden', 'text-green-300', 'bg-green-900', 'bg-opacity-30', 'border-green-700', 'text-red-300', 'bg-red-900', 'bg-opacity-30', 'border-red-700', 'p-4', 'rounded-md');
+                contactFormFeedback.innerHTML = '';
+
+                if (!isValid) {
+                    contactFormFeedback.classList.add('text-red-300', 'bg-red-900', 'bg-opacity-30', 'border', 'border-red-700', 'p-4', 'rounded-md');
+                    contactFormFeedback.innerHTML = '<p><i class="fas fa-exclamation-circle mr-2"></i>请填写所有必填项。</p>';
+                    contactFormFeedback.classList.remove('hidden');
+                    const firstInvalid = contactForm.querySelector('.border-red-500');
+                    if(firstInvalid) firstInvalid.focus();
+                    return;
+                }
+
+                // Simulate form submission (always success for prototype)
+                console.log('Simulating contact form submission...');
+                contactFormFeedback.classList.add('text-green-300', 'bg-green-900', 'bg-opacity-30', 'border', 'border-green-700', 'p-4', 'rounded-md');
+                contactFormFeedback.innerHTML = '<p><i class="fas fa-check-circle mr-2"></i>您的留言已成功发送！我们会尽快与您联系。</p>';
+                contactFormFeedback.classList.remove('hidden');
+                contactForm.reset();
+                contactForm.querySelectorAll('.border-red-500').forEach(el => el.classList.remove('border-red-500'));
+            });
+        }
+    </script>
+</body>
+</html>

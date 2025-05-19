@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻中心 - 厦普林克国际物流</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#0052CC',
+                        'dark-bg': '#0F172A',
+                        'dark-card': '#1E293B',
+                        'dark-border': '#334155',
+                        'dark-text-primary': '#E2E8F0',
+                        'dark-text-secondary': '#94A3B8',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .news-header-bg {
+            /* 图片来源: https://unsplash.com/photos/person-reading-newspaper-on-train-sYffw0LNr7s */
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .news-card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .news-card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.1), 0 8px 8px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-dark-text-primary font-sans">
+
+    <!-- Navigation Bar (same as home.html) -->
+    <nav class="bg-dark-card shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0">
+                        <img class="h-10 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-sky-500.svg" alt="厦普林克物流Logo">
+                    </a>
+                    <span class="ml-3 text-xl font-semibold text-sky-400">厦普林克国际物流</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="home.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">首页</a>
+                        <a href="about.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">关于我们</a>
+                        <a href="services.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">服务中心</a>
+                        <a href="news.html" class="bg-dark-bg text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">新闻中心</a>
+                        <a href="tracking.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">货物追踪</a>
+                        <a href="inquiry.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">在线询价</a>
+                        <a href="contact.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">联系我们</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="bg-dark-card inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu-news" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu-news">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="home.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">首页</a>
+                <a href="about.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">关于我们</a>
+                <a href="services.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">服务中心</a>
+                <a href="news.html" class="bg-dark-bg text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">新闻中心</a>
+                <a href="tracking.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">货物追踪</a>
+                <a href="inquiry.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">在线询价</a>
+                <a href="contact.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">联系我们</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="news-header-bg">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">新闻与洞察</h1>
+            <p class="mt-6 max-w-3xl mx-auto text-xl text-gray-300">
+                获取最新的公司动态、行业资讯和物流趋势解读。
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        
+        <!-- Filter/Category Section (Optional) -->
+        <div class="mb-10 flex flex-wrap justify-center gap-2 sm:gap-4">
+            <button class="px-4 py-2 text-sm font-medium rounded-md bg-sky-500 text-white hover:bg-sky-600 transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-opacity-50">全部新闻</button>
+            <button class="px-4 py-2 text-sm font-medium rounded-md bg-dark-card text-dark-text-secondary hover:bg-gray-700 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-opacity-50">公司动态</button>
+            <button class="px-4 py-2 text-sm font-medium rounded-md bg-dark-card text-dark-text-secondary hover:bg-gray-700 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-opacity-50">行业观察</button>
+            <button class="px-4 py-2 text-sm font-medium rounded-md bg-dark-card text-dark-text-secondary hover:bg-gray-700 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-opacity-50">政策解读</button>
+        </div>
+
+        <!-- News List/Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+            <!-- News Card 1 -->
+            <article class="bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col news-card-hover">
+                <!-- 图片来源: https://www.pexels.com/photo/cargo-ship-on-the-ocean-3969060/ -->
+                <a href="news-detail-example.html?id=1" class="block">
+                    <img class="w-full h-52 object-cover" src="https://images.pexels.com/photos/3969060/pexels-photo-3969060.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="新闻图片1">
+                </a>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="mb-2">
+                        <span class="inline-block bg-sky-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">公司动态</span>
+                    </div>
+                    <a href="news-detail-example.html?id=1" class="block">
+                        <h3 class="text-xl font-semibold text-dark-text-primary hover:text-sky-400 transition-colors">厦普林克物流荣获“年度最佳物流服务商”称号</h3>
+                    </a>
+                    <p class="mt-3 text-sm text-dark-text-secondary flex-grow">
+                        凭借卓越的服务质量和客户满意度，厦普林克国际物流在近日举行的行业峰会上荣膺“年度最佳物流服务商”大奖。
+                    </p>
+                    <div class="mt-4 flex items-center text-xs text-gray-400">
+                        <i class="fas fa-calendar-alt mr-1.5"></i>
+                        <span>2024年7月15日</span>
+                        <span class="mx-2">|</span>
+                        <i class="fas fa-user mr-1.5"></i>
+                        <span>管理员</span>
+                    </div>
+                    <a href="news-detail-example.html?id=1" class="mt-4 inline-block text-sky-400 hover:text-sky-300 text-sm font-medium">阅读更多 <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+            </article>
+
+            <!-- News Card 2 -->
+            <article class="bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col news-card-hover">
+                <!-- 图片来源: https://www.pexels.com/photo/an-airplane-flying-in-the-sky-723240/ -->
+                <a href="news-detail-example.html?id=2" class="block">
+                    <img class="w-full h-52 object-cover" src="https://images.pexels.com/photos/723240/pexels-photo-723240.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="新闻图片2">
+                </a>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="mb-2">
+                        <span class="inline-block bg-teal-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">行业观察</span>
+                    </div>
+                    <a href="news-detail-example.html?id=2" class="block">
+                        <h3 class="text-xl font-semibold text-dark-text-primary hover:text-sky-400 transition-colors">全球供应链韧性面临新挑战：专家解读与应对策略</h3>
+                    </a>
+                    <p class="mt-3 text-sm text-dark-text-secondary flex-grow">
+                        近期地缘政治及气候变化对全球供应链造成冲击，行业专家就如何提升供应链韧性提出多项关键策略。
+                    </p>
+                    <div class="mt-4 flex items-center text-xs text-gray-400">
+                        <i class="fas fa-calendar-alt mr-1.5"></i>
+                        <span>2024年7月10日</span>
+                        <span class="mx-2">|</span>
+                        <i class="fas fa-user mr-1.5"></i>
+                        <span>行业分析师</span>
+                    </div>
+                    <a href="news-detail-example.html?id=2" class="mt-4 inline-block text-sky-400 hover:text-sky-300 text-sm font-medium">阅读更多 <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+            </article>
+
+            <!-- News Card 3 -->
+            <article class="bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col news-card-hover">
+                <!-- 图片来源: https://www.pexels.com/photo/people-working-at-the-customs-office-7648792/ (示意政策文件) -->
+                <a href="news-detail-example.html?id=3" class="block">
+                    <img class="w-full h-52 object-cover" src="https://images.pexels.com/photos/7648792/pexels-photo-7648792.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="新闻图片3">
+                </a>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="mb-2">
+                        <span class="inline-block bg-indigo-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">政策解读</span>
+                    </div>
+                    <a href="news-detail-example.html?id=3" class="block">
+                        <h3 class="text-xl font-semibold text-dark-text-primary hover:text-sky-400 transition-colors">最新出入境检验检疫政策调整对进出口企业的影响</h3>
+                    </a>
+                    <p class="mt-3 text-sm text-dark-text-secondary flex-grow">
+                        国家海关总署发布最新出入境检验检疫政策调整通知，本文将为您详细解读新政内容及其对相关企业的影响。
+                    </p>
+                    <div class="mt-4 flex items-center text-xs text-gray-400">
+                        <i class="fas fa-calendar-alt mr-1.5"></i>
+                        <span>2024年7月5日</span>
+                        <span class="mx-2">|</span>
+                        <i class="fas fa-user mr-1.5"></i>
+                        <span>政策研究员</span>
+                    </div>
+                    <a href="news-detail-example.html?id=3" class="mt-4 inline-block text-sky-400 hover:text-sky-300 text-sm font-medium">阅读更多 <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+            </article>
+
+            <!-- News Card 4 -->
+            <article class="bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col news-card-hover">
+                <!-- 图片来源: https://www.pexels.com/photo/a-team-of-professionals-working-in-an-office-7551671/ -->
+                <a href="news-detail-example.html?id=4" class="block">
+                    <img class="w-full h-52 object-cover" src="https://images.pexels.com/photos/7551671/pexels-photo-7551671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="新闻图片4">
+                </a>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="mb-2">
+                        <span class="inline-block bg-sky-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">公司动态</span>
+                    </div>
+                    <a href="news-detail-example.html?id=4" class="block">
+                        <h3 class="text-xl font-semibold text-dark-text-primary hover:text-sky-400 transition-colors">厦普林克物流开通东南亚新航线，助力区域贸易发展</h3>
+                    </a>
+                    <p class="mt-3 text-sm text-dark-text-secondary flex-grow">
+                        为满足日益增长的东南亚市场需求，厦普林克国际物流宣布正式开通连接中国与东南亚主要港口的新海运航线。
+                    </p>
+                    <div class="mt-4 flex items-center text-xs text-gray-400">
+                        <i class="fas fa-calendar-alt mr-1.5"></i>
+                        <span>2024年6月28日</span>
+                        <span class="mx-2">|</span>
+                        <i class="fas fa-user mr-1.5"></i>
+                        <span>管理员</span>
+                    </div>
+                    <a href="news-detail-example.html?id=4" class="mt-4 inline-block text-sky-400 hover:text-sky-300 text-sm font-medium">阅读更多 <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+            </article>
+            
+            <!-- News Card 5 -->
+            <article class="bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col news-card-hover">
+                <!-- 图片来源: https://www.pexels.com/photo/drone-shot-of-a-port-7533347/ -->
+                <a href="news-detail-example.html?id=5" class="block">
+                    <img class="w-full h-52 object-cover" src="https://images.pexels.com/photos/7533347/pexels-photo-7533347.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="新闻图片5">
+                </a>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="mb-2">
+                        <span class="inline-block bg-teal-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">行业观察</span>
+                    </div>
+                    <a href="news-detail-example.html?id=5" class="block">
+                        <h3 class="text-xl font-semibold text-dark-text-primary hover:text-sky-400 transition-colors">绿色物流：可持续发展在货运业的实践与未来</h3>
+                    </a>
+                    <p class="mt-3 text-sm text-dark-text-secondary flex-grow">
+                        随着环保意识的提升，绿色物流成为行业发展的重要趋势。本文探讨了当前货运业在可持续发展方面的实践案例和未来展望。
+                    </p>
+                    <div class="mt-4 flex items-center text-xs text-gray-400">
+                        <i class="fas fa-calendar-alt mr-1.5"></i>
+                        <span>2024年6月20日</span>
+                        <span class="mx-2">|</span>
+                        <i class="fas fa-user mr-1.5"></i>
+                        <span>行业分析师</span>
+                    </div>
+                    <a href="news-detail-example.html?id=5" class="mt-4 inline-block text-sky-400 hover:text-sky-300 text-sm font-medium">阅读更多 <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+            </article>
+
+            <!-- News Card 6 -->
+            <article class="bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col news-card-hover">
+                <!-- 图片来源: https://www.pexels.com/photo/a-group-of-people-in-a-business-meeting-3184338/ -->
+                <a href="news-detail-example.html?id=6" class="block">
+                    <img class="w-full h-52 object-cover" src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="新闻图片6">
+                </a>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="mb-2">
+                        <span class="inline-block bg-sky-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">公司动态</span>
+                    </div>
+                    <a href="news-detail-example.html?id=6" class="block">
+                        <h3 class="text-xl font-semibold text-dark-text-primary hover:text-sky-400 transition-colors">厦普林克物流参加2024亚洲国际物流技术与运输系统展览会</h3>
+                    </a>
+                    <p class="mt-3 text-sm text-dark-text-secondary flex-grow">
+                        我司于近日参加了在上海举办的亚洲国际物流技术与运输系统展览会，展示了最新的智慧物流解决方案，受到广泛关注。
+                    </p>
+                    <div class="mt-4 flex items-center text-xs text-gray-400">
+                        <i class="fas fa-calendar-alt mr-1.5"></i>
+                        <span>2024年6月15日</span>
+                        <span class="mx-2">|</span>
+                        <i class="fas fa-user mr-1.5"></i>
+                        <span>管理员</span>
+                    </div>
+                    <a href="news-detail-example.html?id=6" class="mt-4 inline-block text-sky-400 hover:text-sky-300 text-sm font-medium">阅读更多 <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+            </article>
+        </div>
+
+        <!-- Pagination -->
+        <nav class="mt-16 flex items-center justify-between border-t border-dark-border px-4 py-3 sm:px-6" aria-label="Pagination">
+            <div class="hidden sm:block">
+                <p class="text-sm text-dark-text-secondary">
+                    显示 <span class="font-medium">1</span> 到 <span class="font-medium">6</span> (共 <span class="font-medium">23</span> 条结果)
+                </p>
+            </div>
+            <div class="flex flex-1 justify-between sm:justify-end">
+                <a href="#" class="relative inline-flex items-center rounded-md border border-dark-border bg-dark-card px-4 py-2 text-sm font-medium text-dark-text-secondary hover:bg-gray-700 transition-colors">
+                    上一页
+                </a>
+                <a href="#" class="relative ml-3 inline-flex items-center rounded-md border border-dark-border bg-dark-card px-4 py-2 text-sm font-medium text-dark-text-secondary hover:bg-gray-700 transition-colors">
+                    下一页
+                </a>
+            </div>
+        </nav>
+
+    </main>
+
+    <!-- Footer (same as home.html) -->
+    <footer class="bg-dark-card border-t border-dark-border mt-12">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">关于我们</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="about.html#company-profile" class="text-base text-dark-text-secondary hover:text-dark-text-primary">公司简介</a></li>
+                        <li><a href="about.html#our-mission" class="text-base text-dark-text-secondary hover:text-dark-text-primary">企业文化</a></li>
+                        <li><a href="about.html#milestones" class="text-base text-dark-text-secondary hover:text-dark-text-primary">发展历程</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">核心服务</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="services.html#sea-freight" class="text-base text-dark-text-secondary hover:text-dark-text-primary">国际海运</a></li>
+                        <li><a href="services.html#air-freight" class="text-base text-dark-text-secondary hover:text-dark-text-primary">国际空运</a></li>
+                        <li><a href="services.html#land-transport" class="text-base text-dark-text-secondary hover:text-dark-text-primary">陆路运输</a></li>
+                        <li><a href="services.html#ecommerce-logistics" class="text-base text-dark-text-secondary hover:text-dark-text-primary">跨境电商物流</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">快速链接</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="tracking.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">货物追踪</a></li>
+                        <li><a href="inquiry.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">在线询价</a></li>
+                        <li><a href="news.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">新闻中心</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">联系我们</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-map-marker-alt mr-2 text-sky-400"></i> 深圳市XX区XX街道XX号</li>
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-phone-alt mr-2 text-sky-400"></i> +86 755 1234 5678</li>
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-envelope mr-2 text-sky-400"></i> info@sharplinker.com</li>
+                    </ul>
+                    <div class="mt-6 flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-gray-300"><span class="sr-only">微信公众号</span><i class="fab fa-weixin fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gray-300"><span class="sr-only">LinkedIn</span><i class="fab fa-linkedin fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-dark-border pt-8 md:flex md:items-center md:justify-between">
+                <p class="text-base text-dark-text-secondary md:mt-0 md:order-1">
+                    &copy; ${new Date().getFullYear()} 厦普林克国际物流 (深圳) 有限公司. All rights reserved.
+                </p>
+                <p class="mt-4 text-xs text-gray-500 md:mt-0 md:order-2">
+                    原型设计与实现 by AI Agent. 图片来源: Unsplash, Pexels.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButtonNews = document.querySelector('[aria-controls="mobile-menu-news"]');
+        const mobileMenuNews = document.getElementById('mobile-menu-news');
+        if (mobileMenuButtonNews && mobileMenuNews) {
+            mobileMenuButtonNews.addEventListener('click', () => {
+                const isExpanded = mobileMenuButtonNews.getAttribute('aria-expanded') === 'true' || false;
+                mobileMenuButtonNews.setAttribute('aria-expanded', !isExpanded);
+                mobileMenuNews.classList.toggle('hidden');
+                const icon = mobileMenuButtonNews.querySelector('i');
+                if (icon) {
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                }
+            });
+        }
+
+        // Placeholder for news detail page link (actual navigation would be to a separate detail page)
+        // For this prototype, clicking a news card will link to news-detail-example.html
+        // In a real application, you would generate unique detail pages or use a template engine.
+    </script>
+</body>
+</html>

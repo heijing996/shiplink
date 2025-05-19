@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>厦普林克国际物流 - 高保真原型</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#0052CC', // 示例品牌蓝
+                        'dark-bg': '#0F172A', // 主背景色 (更深的slate)
+                        'dark-card': '#1E293B', // 卡片背景色 (slate-800)
+                        'dark-border': '#334155', // 边框色 (slate-700)
+                        'dark-text-primary': '#E2E8F0', // 主要文字 (slate-200)
+                        'dark-text-secondary': '#94A3B8', // 次要文字 (slate-400)
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 基本的滚动条美化，使其在暗黑模式下更和谐 */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1E293B; /* dark-card */
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #334155; /* dark-border */
+            border-radius: 4px;
+            border: 2px solid #1E293B; /* dark-card, creates padding around thumb */
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #475569; /* slate-600 */
+        }
+
+        .iframe-container-wrapper {
+            border: 1px solid var(--tw-prose-hr, #334155); /* dark-border */
+            border-radius: 0.5rem; /* rounded-lg */
+            overflow: hidden; /* 确保iframe的圆角生效 */
+            background-color: var(--tw-prose-invert-bg, #1E293B); /* dark-card */
+        }
+        .iframe-title-bar {
+            background-color: var(--tw-prose-invert-bg, #1E293B); /* dark-card */
+            padding: 0.75rem 1.25rem; /* py-3 px-5 */
+            border-bottom: 1px solid var(--tw-prose-hr, #334155); /* dark-border */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .iframe-title {
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 600; /* font-semibold */
+            color: var(--tw-prose-invert-headings, #E2E8F0); /* dark-text-primary */
+        }
+        .iframe-controls span {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-left: 8px;
+        }
+        .iframe-src-link {
+            font-size: 0.875rem; /* text-sm */
+            color: var(--tw-prose-invert-links, #94A3B8); /* dark-text-secondary */
+            text-decoration: none;
+        }
+        .iframe-src-link:hover {
+            color: var(--tw-prose-invert-headings, #E2E8F0); /* dark-text-primary */
+            text-decoration: underline;
+        }
+        .iframe-content {
+            width: 100%;
+            /* 默认高度，可以根据内容调整，或者通过JS动态调整 */
+            /* 建议为每个iframe设置一个最小高度，并允许其内容撑开 */
+            min-height: 75vh; 
+            height: auto; /* 允许内容撑开 */
+            border: none;
+            display: block; /* 消除iframe底部空白 */
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-dark-text-primary p-4 md:p-8 selection:bg-sky-500 selection:text-white">
+    <header class="mb-10 md:mb-16 text-center">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-sky-400">厦普林克国际物流 - 网站原型预览</h1>
+        <p class="text-md sm:text-lg text-dark-text-secondary mt-2">所有核心界面平铺展示 (暗黑主题)</p>
+        <p class="text-sm text-slate-500 mt-1">目标平台: Web (响应式)</p>
+    </header>
+
+    <main id="prototype-frames-container" class="space-y-10 md:space-y-16 max-w-full mx-auto">
+        <!-- 页面列表将通过JS动态生成或直接在此处列出 -->
+        <script>
+            const pages = [
+                { title: "1. 首页", file: "home.html" },
+                { title: "2. 关于我们", file: "about.html" },
+                { title: "3. 服务中心", file: "services.html" },
+                { title: "4. 新闻中心", file: "news.html" },
+                { title: "5. 货物追踪", file: "tracking.html" },
+                { title: "6. 在线询价", file: "inquiry.html" },
+                { title: "7. 联系我们", file: "contact.html" }
+            ];
+
+            const container = document.getElementById('prototype-frames-container');
+
+            pages.forEach(page => {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'iframe-container-wrapper shadow-xl';
+
+                const titleBar = document.createElement('div');
+                titleBar.className = 'iframe-title-bar';
+                
+                const titleControls = document.createElement('div');
+                titleControls.className = 'iframe-controls flex items-center';
+                
+                const closeBtn = document.createElement('span');
+                closeBtn.style.backgroundColor = '#FF5F57'; // macOS red
+                const minimizeBtn = document.createElement('span');
+                minimizeBtn.style.backgroundColor = '#FEBC2E'; // macOS yellow
+                const maximizeBtn = document.createElement('span');
+                maximizeBtn.style.backgroundColor = '#28C840'; // macOS green
+                titleControls.append(closeBtn, minimizeBtn, maximizeBtn);
+
+                const pageTitle = document.createElement('h2');
+                pageTitle.className = 'iframe-title';
+                pageTitle.textContent = page.title;
+
+                const fileLink = document.createElement('a');
+                fileLink.className = 'iframe-src-link';
+                fileLink.href = page.file;
+                fileLink.textContent = `(${page.file})`;
+                fileLink.target = '_blank'; //在新标签页打开源文件
+
+                titleBar.appendChild(titleControls);
+                const titleTextWrapper = document.createElement('div');
+                titleTextWrapper.appendChild(pageTitle);
+                titleTextWrapper.appendChild(fileLink);
+                titleBar.appendChild(titleTextWrapper);
+                titleBar.appendChild(document.createElement('div')); // For spacing, to push title to center if controls on left
+
+
+                const iframe = document.createElement('iframe');
+                iframe.src = page.file;
+                iframe.className = 'iframe-content';
+                iframe.title = `${page.title.split('. ')[1]} 原型`;
+                iframe.setAttribute('loading', 'lazy'); // Lazy load iframes
+                // 动态调整iframe高度以适应内容
+                iframe.onload = function() {
+                    try {
+                        const body = iframe.contentWindow.document.body;
+                        const html = iframe.contentWindow.document.documentElement;
+                        // 加一点buffer，避免滚动条出现
+                        const height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight ) + 20;
+                        iframe.style.height = height + 'px';
+                    } catch (e) {
+                        console.warn('Could not resize iframe for ' + page.file, e);
+                        // Fallback height if content access is restricted (e.g. different origin, though not expected here)
+                        iframe.style.height = '75vh'; 
+                    }
+                };
+
+                wrapper.appendChild(titleBar);
+                wrapper.appendChild(iframe);
+                container.appendChild(wrapper);
+            });
+        </script>
+    </main>
+
+    <footer class="mt-12 md:mt-20 pt-8 pb-8 border-t border-dark-border text-center text-dark-text-secondary text-sm">
+        <p>&copy; ${new Date().getFullYear()} 厦普林克国际物流 (深圳) 有限公司. 高保真原型.</p>
+        <p class="mt-1">技术栈: HTML, Tailwind CSS, FontAwesome, JavaScript</p>
+        <p class="mt-1">图片来源: Unsplash, Pexels (将在各页面中标注)</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

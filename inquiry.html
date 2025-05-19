@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线询价 - 厦普林克国际物流</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#0052CC',
+                        'dark-bg': '#0F172A',
+                        'dark-card': '#1E293B',
+                        'dark-border': '#334155',
+                        'dark-text-primary': '#E2E8F0',
+                        'dark-text-secondary': '#94A3B8',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .inquiry-header-bg {
+            /* 图片来源: https://unsplash.com/photos/a-view-of-a-city-from-the-top-of-a-hill-at-night-DbL_TEm3E0g */
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-dark-text-primary font-sans">
+
+    <!-- Navigation Bar (same as home.html) -->
+    <nav class="bg-dark-card shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0">
+                        <img class="h-10 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-sky-500.svg" alt="厦普林克物流Logo">
+                    </a>
+                    <span class="ml-3 text-xl font-semibold text-sky-400">厦普林克国际物流</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="home.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">首页</a>
+                        <a href="about.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">关于我们</a>
+                        <a href="services.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">服务中心</a>
+                        <a href="news.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">新闻中心</a>
+                        <a href="tracking.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">货物追踪</a>
+                        <a href="inquiry.html" class="bg-dark-bg text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">在线询价</a>
+                        <a href="contact.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">联系我们</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="bg-dark-card inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu-inquiry" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu-inquiry">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="home.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">首页</a>
+                <a href="about.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">关于我们</a>
+                <a href="services.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">服务中心</a>
+                <a href="news.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">新闻中心</a>
+                <a href="tracking.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">货物追踪</a>
+                <a href="inquiry.html" class="bg-dark-bg text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">在线询价</a>
+                <a href="contact.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">联系我们</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="inquiry-header-bg">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">在线询价</h1>
+            <p class="mt-6 max-w-3xl mx-auto text-xl text-gray-300">
+                快速获取您的专属物流方案与报价，我们将在24小时内回复您。
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        
+        <section id="inquiry-form-section" class="bg-dark-card shadow-xl rounded-lg p-6 sm:p-8 md:p-10">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-dark-text-primary mb-8 text-center">填写询价信息</h2>
+            <form id="inquiryForm" class="space-y-8">
+                <!-- Route Information -->
+                <fieldset>
+                    <legend class="text-lg font-medium text-sky-400 mb-4">1. 路线信息</legend>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="originPort" class="block text-sm font-medium text-dark-text-secondary">起运港/城市 <span class="text-red-400">*</span></label>
+                            <input type="text" name="originPort" id="originPort" required class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="例如：上海 / Shenzhen">
+                        </div>
+                        <div>
+                            <label for="destinationPort" class="block text-sm font-medium text-dark-text-secondary">目的港/城市 <span class="text-red-400">*</span></label>
+                            <input type="text" name="destinationPort" id="destinationPort" required class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="例如：洛杉矶 / Hamburg">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Cargo Information -->
+                <fieldset>
+                    <legend class="text-lg font-medium text-sky-400 mb-4">2. 货物信息</legend>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="cargoType" class="block text-sm font-medium text-dark-text-secondary">货物名称/类型 <span class="text-red-400">*</span></label>
+                            <input type="text" name="cargoType" id="cargoType" required class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="例如：电子产品 / 服装">
+                        </div>
+                        <div>
+                            <label for="cargoMode" class="block text-sm font-medium text-dark-text-secondary">运输模式 <span class="text-red-400">*</span></label>
+                            <select id="cargoMode" name="cargoMode" required class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary">
+                                <option value="">请选择</option>
+                                <option value="FCL">整柜 (FCL)</option>
+                                <option value="LCL">拼箱 (LCL)</option>
+                                <option value="Air">空运</option>
+                                <option value="Land">陆运</option>
+                                <option value="Multimodal">多式联运</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                        <div>
+                            <label for="cargoWeight" class="block text-sm font-medium text-dark-text-secondary">总重量 (KG) <span class="text-red-400">*</span></label>
+                            <input type="number" name="cargoWeight" id="cargoWeight" required min="0" step="0.01" class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="例如：1500">
+                        </div>
+                        <div>
+                            <label for="cargoVolume" class="block text-sm font-medium text-dark-text-secondary">总体积 (CBM)</label>
+                            <input type="number" name="cargoVolume" id="cargoVolume" min="0" step="0.01" class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="例如：2.5">
+                        </div>
+                        <div>
+                            <label for="cargoQuantity" class="block text-sm font-medium text-dark-text-secondary">件数</label>
+                            <input type="number" name="cargoQuantity" id="cargoQuantity" min="1" step="1" class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="例如：100">
+                        </div>
+                    </div>
+                     <div class="mt-6">
+                        <label for="cargoRemarks" class="block text-sm font-medium text-dark-text-secondary">备注 (如特殊要求、危险品等)</label>
+                        <textarea id="cargoRemarks" name="cargoRemarks" rows="3" class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="请在此处填写货物的特殊要求，如是否为危险品、易碎品、温控需求等。"></textarea>
+                    </div>
+                </fieldset>
+
+                <!-- Contact Information -->
+                <fieldset>
+                    <legend class="text-lg font-medium text-sky-400 mb-4">3. 联系方式</legend>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="contactName" class="block text-sm font-medium text-dark-text-secondary">您的姓名 <span class="text-red-400">*</span></label>
+                            <input type="text" name="contactName" id="contactName" required autocomplete="name" class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="例如：张三">
+                        </div>
+                        <div>
+                            <label for="companyName" class="block text-sm font-medium text-dark-text-secondary">公司名称</label>
+                            <input type="text" name="companyName" id="companyName" autocomplete="organization" class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="例如：ABC贸易有限公司">
+                        </div>
+                        <div>
+                            <label for="contactEmail" class="block text-sm font-medium text-dark-text-secondary">电子邮箱 <span class="text-red-400">*</span></label>
+                            <input type="email" name="contactEmail" id="contactEmail" required autocomplete="email" class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="例如：zhangsan@example.com">
+                        </div>
+                        <div>
+                            <label for="contactPhone" class="block text-sm font-medium text-dark-text-secondary">联系电话 <span class="text-red-400">*</span></label>
+                            <input type="tel" name="contactPhone" id="contactPhone" required autocomplete="tel" class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="例如：13800138000">
+                        </div>
+                    </div>
+                </fieldset>
+                
+                <!-- Terms and Submit -->
+                <div class="pt-5">
+                    <div class="flex items-start mb-4">
+                        <div class="flex items-center h-5">
+                            <input id="terms" name="terms" type="checkbox" required class="focus:ring-sky-500 h-4 w-4 text-sky-600 border-gray-500 rounded bg-dark-bg">
+                        </div>
+                        <div class="ml-3 text-sm">
+                            <label for="terms" class="font-medium text-dark-text-secondary">我已阅读并同意 <a href="#" class="text-sky-400 hover:text-sky-300">服务条款</a> 和 <a href="#" class="text-sky-400 hover:text-sky-300">隐私政策</a>。</label>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                        <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-sky-500 hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-bg focus:ring-sky-500 transition-colors">
+                            <i class="fas fa-paper-plane mr-2"></i> 提交询价
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <!-- Submission Success Message (Initially Hidden) -->
+        <section id="inquiry-success-section" class="mt-12 bg-green-900 bg-opacity-30 border border-green-700 text-green-300 px-4 py-6 rounded-lg text-center hidden">
+            <i class="fas fa-check-circle text-5xl text-green-400 mb-4"></i>
+            <h2 class="text-2xl font-semibold mb-2">询价已成功提交！</h2>
+            <p>感谢您的询价。我们的客户代表将在24小时内与您联系，并提供详细的报价方案。</p>
+            <p class="mt-2 text-sm">您的询价参考号是: <span id="inquiryRefNo" class="font-bold">INQ-${Date.now().toString().slice(-6)}</span></p>
+            <button id="newInquiryBtn" class="mt-6 px-6 py-2 bg-sky-500 text-white rounded-md hover:bg-sky-600 transition-colors">发起新询价</button>
+        </section>
+        
+        <!-- Submission Error Message (Initially Hidden) -->
+        <section id="inquiry-error-section" class="mt-12 bg-red-900 bg-opacity-30 border border-red-700 text-red-300 px-4 py-3 rounded-lg relative hidden" role="alert">
+            <strong class="font-bold">提交失败!</strong>
+            <span class="block sm:inline" id="inquiryErrorMessage"></span>
+        </section>
+
+    </main>
+
+    <!-- Footer (same as home.html) -->
+    <footer class="bg-dark-card border-t border-dark-border mt-12">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">关于我们</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="about.html#company-profile" class="text-base text-dark-text-secondary hover:text-dark-text-primary">公司简介</a></li>
+                        <li><a href="about.html#our-mission" class="text-base text-dark-text-secondary hover:text-dark-text-primary">企业文化</a></li>
+                        <li><a href="about.html#milestones" class="text-base text-dark-text-secondary hover:text-dark-text-primary">发展历程</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">核心服务</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="services.html#sea-freight" class="text-base text-dark-text-secondary hover:text-dark-text-primary">国际海运</a></li>
+                        <li><a href="services.html#air-freight" class="text-base text-dark-text-secondary hover:text-dark-text-primary">国际空运</a></li>
+                        <li><a href="services.html#land-transport" class="text-base text-dark-text-secondary hover:text-dark-text-primary">陆路运输</a></li>
+                        <li><a href="services.html#ecommerce-logistics" class="text-base text-dark-text-secondary hover:text-dark-text-primary">跨境电商物流</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">快速链接</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="tracking.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">货物追踪</a></li>
+                        <li><a href="inquiry.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">在线询价</a></li>
+                        <li><a href="news.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">新闻中心</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">联系我们</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-map-marker-alt mr-2 text-sky-400"></i> 深圳市XX区XX街道XX号</li>
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-phone-alt mr-2 text-sky-400"></i> +86 755 1234 5678</li>
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-envelope mr-2 text-sky-400"></i> info@sharplinker.com</li>
+                    </ul>
+                    <div class="mt-6 flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-gray-300"><span class="sr-only">微信公众号</span><i class="fab fa-weixin fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gray-300"><span class="sr-only">LinkedIn</span><i class="fab fa-linkedin fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-dark-border pt-8 md:flex md:items-center md:justify-between">
+                <p class="text-base text-dark-text-secondary md:mt-0 md:order-1">
+                    &copy; ${new Date().getFullYear()} 厦普林克国际物流 (深圳) 有限公司. All rights reserved.
+                </p>
+                <p class="mt-4 text-xs text-gray-500 md:mt-0 md:order-2">
+                    原型设计与实现 by AI Agent. 图片来源: Unsplash.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButtonInquiry = document.querySelector('[aria-controls="mobile-menu-inquiry"]');
+        const mobileMenuInquiry = document.getElementById('mobile-menu-inquiry');
+        if (mobileMenuButtonInquiry && mobileMenuInquiry) {
+            mobileMenuButtonInquiry.addEventListener('click', () => {
+                const isExpanded = mobileMenuButtonInquiry.getAttribute('aria-expanded') === 'true' || false;
+                mobileMenuButtonInquiry.setAttribute('aria-expanded', !isExpanded);
+                mobileMenuInquiry.classList.toggle('hidden');
+                const icon = mobileMenuButtonInquiry.querySelector('i');
+                if (icon) {
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                }
+            });
+        }
+
+        // Inquiry form submission simulation
+        const inquiryForm = document.getElementById('inquiryForm');
+        const inquiryFormSection = document.getElementById('inquiry-form-section');
+        const inquirySuccessSection = document.getElementById('inquiry-success-section');
+        const inquiryErrorSection = document.getElementById('inquiry-error-section');
+        const inquiryErrorMessage = document.getElementById('inquiryErrorMessage');
+        const newInquiryBtn = document.getElementById('newInquiryBtn');
+        const inquiryRefNo = document.getElementById('inquiryRefNo');
+
+        if (inquiryForm) {
+            inquiryForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                // Basic client-side validation (Tailwind uses browser's default for required)
+                let isValid = true;
+                inquiryForm.querySelectorAll('[required]').forEach(input => {
+                    if (!input.value.trim() && input.type !== 'checkbox') {
+                        isValid = false;
+                        input.classList.add('border-red-500');
+                    } else if (input.type === 'checkbox' && !input.checked) {
+                        isValid = false;
+                        // You might want to highlight the checkbox or its label
+                    } else {
+                        input.classList.remove('border-red-500');
+                    }
+                });
+
+                if (!isValid) {
+                    inquiryErrorMessage.textContent = '请填写所有必填项并同意服务条款。';
+                    inquiryErrorSection.classList.remove('hidden');
+                    inquirySuccessSection.classList.add('hidden');
+                    // Scroll to first invalid field (optional)
+                    const firstInvalid = inquiryForm.querySelector('.border-red-500, input[type="checkbox"]:invalid');
+                    if(firstInvalid) firstInvalid.focus();
+                    return;
+                }
+
+                // Simulate form submission
+                console.log('Simulating inquiry submission...');
+                // For prototype, always show success
+                inquiryFormSection.classList.add('hidden');
+                inquiryErrorSection.classList.add('hidden');
+                inquirySuccessSection.classList.remove('hidden');
+                if(inquiryRefNo) inquiryRefNo.textContent = 'INQ-' + Date.now().toString().slice(-6);
+                window.scrollTo(0, inquirySuccessSection.offsetTop - 100); // Scroll to success message
+            });
+        }
+
+        if (newInquiryBtn) {
+            newInquiryBtn.addEventListener('click', () => {
+                inquirySuccessSection.classList.add('hidden');
+                inquiryErrorSection.classList.add('hidden');
+                inquiryFormSection.classList.remove('hidden');
+                if (inquiryForm) inquiryForm.reset();
+                // Reset red borders if any
+                inquiryForm.querySelectorAll('.border-red-500').forEach(el => el.classList.remove('border-red-500'));
+            });
+        }
+
+    </script>
+</body>
+</html>

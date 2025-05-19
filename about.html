@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 - 厦普林克国际物流</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#0052CC',
+                        'dark-bg': '#0F172A',
+                        'dark-card': '#1E293B',
+                        'dark-border': '#334155',
+                        'dark-text-primary': '#E2E8F0',
+                        'dark-text-secondary': '#94A3B8',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .page-header-bg {
+            /* 图片来源: https://unsplash.com/photos/high-angle-photo-of-buildings-near-sea-XJXWbfY-NfI */
+            background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1506750990934-b602835146f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-dark-text-primary font-sans">
+
+    <!-- Navigation Bar (same as home.html) -->
+    <nav class="bg-dark-card shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0">
+                        <img class="h-10 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-sky-500.svg" alt="厦普林克物流Logo">
+                    </a>
+                    <span class="ml-3 text-xl font-semibold text-sky-400">厦普林克国际物流</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="home.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">首页</a>
+                        <a href="about.html" class="bg-dark-bg text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">关于我们</a>
+                        <a href="services.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">服务中心</a>
+                        <a href="news.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">新闻中心</a>
+                        <a href="tracking.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">货物追踪</a>
+                        <a href="inquiry.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">在线询价</a>
+                        <a href="contact.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">联系我们</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="bg-dark-card inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu-about" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu-about">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="home.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">首页</a>
+                <a href="about.html" class="bg-dark-bg text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">关于我们</a>
+                <a href="services.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">服务中心</a>
+                <a href="news.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">新闻中心</a>
+                <a href="tracking.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">货物追踪</a>
+                <a href="inquiry.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">在线询价</a>
+                <a href="contact.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">联系我们</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header-bg">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">关于厦普林克</h1>
+            <p class="mt-6 max-w-3xl mx-auto text-xl text-gray-300">
+                专业、创新、可靠 —— 了解我们如何成为您值得信赖的全球物流伙伴。
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+
+        <!-- Company Profile Section -->
+        <section id="company-profile" class="py-12">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-start">
+                <div class="prose prose-invert prose-lg text-dark-text-secondary max-w-none">
+                    <h2 class="text-3xl font-extrabold text-sky-400 sm:text-4xl mb-6">公司简介</h2>
+                    <p>厦普林克国际物流（深圳）有限公司，自成立以来，始终专注于为全球客户提供卓越的、全方位的国际物流服务。我们深耕于海运、空运、陆路运输以及多式联运领域，凭借专业的团队、广泛的全球网络和对客户需求的深刻理解，致力于打造高效、安全、经济的物流解决方案。</p>
+                    <p>我们不仅仅是货物的搬运者，更是您供应链中值得信赖的战略合作伙伴。通过不断的技术创新和服务升级，我们帮助客户优化物流成本，提升运营效率，在全球贸易的浪潮中抢占先机。</p>
+                    <p>我们的总部位于中国深圳，一个充满活力的国际化大都市和重要的物流枢纽。依托粤港澳大湾区的地理优势和政策支持，厦普林克能够快速响应市场变化，为客户提供灵活且富有竞争力的服务。</p>
+                </div>
+                <div class="mt-10 lg:mt-0">
+                    <!-- 图片来源: https://www.pexels.com/photo/people-working-in-a-modern-office-7648795/ -->
+                    <img class="rounded-lg shadow-xl object-cover w-full h-auto max-h-[500px]" src="https://images.pexels.com/photos/7648795/pexels-photo-7648795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="厦普林克办公环境">
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission, Vision, Values Section -->
+        <section id="our-mission" class="py-16 bg-dark-card rounded-lg shadow-xl -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-sky-400 sm:text-4xl">使命、愿景与价值观</h2>
+                <p class="mt-4 text-lg text-dark-text-secondary">
+                    驱动我们不断前行的核心信念。
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-dark-bg p-8 rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-sky-400 mb-4">
+                        <i class="fas fa-bullseye fa-3x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-text-primary mb-2">我们的使命</h3>
+                    <p class="text-dark-text-secondary">
+                        通过卓越的物流服务连接世界，为客户创造价值，促进行业发展，实现可持续增长。
+                    </p>
+                </div>
+                <div class="bg-dark-bg p-8 rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-sky-400 mb-4">
+                        <i class="fas fa-eye fa-3x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-text-primary mb-2">我们的愿景</h3>
+                    <p class="text-dark-text-secondary">
+                        成为全球领先的、客户首选的智慧物流解决方案提供商。
+                    </p>
+                </div>
+                <div class="bg-dark-bg p-8 rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-sky-400 mb-4">
+                        <i class="fas fa-gem fa-3x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-text-primary mb-2">核心价值观</h3>
+                    <p class="text-dark-text-secondary">
+                        客户至上、诚信正直、专业高效、创新进取、合作共赢。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Milestones/History Section -->
+        <section id="milestones" class="py-16">
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-sky-400 sm:text-4xl">发展历程</h2>
+                <p class="mt-4 text-lg text-dark-text-secondary">
+                    回顾厦普林克的重要里程碑，见证我们的成长与蜕变。
+                </p>
+            </div>
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="hidden md:block absolute top-0 bottom-0 left-1/2 w-0.5 bg-dark-border transform -translate-x-1/2"></div>
+                
+                <div class="space-y-12 md:space-y-0">
+                    <!-- Milestone Item 1 -->
+                    <div class="md:grid md:grid-cols-2 md:gap-8 items-center">
+                        <div class="md:text-right md:pr-8 mb-4 md:mb-0">
+                            <div class="inline-block bg-sky-500 text-white font-semibold py-1 px-3 rounded-full text-sm">2010年</div>
+                        </div>
+                        <div class="relative md:pl-8">
+                            <div class="hidden md:block absolute top-1/2 -left-2.5 w-5 h-5 bg-sky-500 rounded-full border-4 border-dark-bg transform -translate-y-1/2"></div>
+                            <div class="bg-dark-card p-6 rounded-lg shadow-lg">
+                                <h3 class="text-lg font-semibold text-dark-text-primary">公司成立</h3>
+                                <p class="mt-2 text-dark-text-secondary">厦普林克国际物流在深圳正式成立，开启国际货运代理业务。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone Item 2 (Right Aligned on Desktop) -->
+                    <div class="md:grid md:grid-cols-2 md:gap-8 items-center">
+                        <div class="relative md:pr-8 order-last md:order-first">
+                             <div class="hidden md:block absolute top-1/2 -right-2.5 w-5 h-5 bg-sky-500 rounded-full border-4 border-dark-bg transform -translate-y-1/2"></div>
+                            <div class="bg-dark-card p-6 rounded-lg shadow-lg md:text-right">
+                                <h3 class="text-lg font-semibold text-dark-text-primary">拓展空运业务</h3>
+                                <p class="mt-2 text-dark-text-secondary">成功拓展国际空运业务，与多家航空公司建立战略合作。</p>
+                            </div>
+                        </div>
+                        <div class="md:text-left md:pl-8 mb-4 md:mb-0 order-first md:order-last">
+                            <div class="inline-block bg-sky-500 text-white font-semibold py-1 px-3 rounded-full text-sm">2013年</div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone Item 3 -->
+                    <div class="md:grid md:grid-cols-2 md:gap-8 items-center">
+                        <div class="md:text-right md:pr-8 mb-4 md:mb-0">
+                            <div class="inline-block bg-sky-500 text-white font-semibold py-1 px-3 rounded-full text-sm">2016年</div>
+                        </div>
+                        <div class="relative md:pl-8">
+                            <div class="hidden md:block absolute top-1/2 -left-2.5 w-5 h-5 bg-sky-500 rounded-full border-4 border-dark-bg transform -translate-y-1/2"></div>
+                            <div class="bg-dark-card p-6 rounded-lg shadow-lg">
+                                <h3 class="text-lg font-semibold text-dark-text-primary">跨境电商物流启动</h3>
+                                <p class="mt-2 text-dark-text-secondary">推出跨境电商物流服务，助力中国卖家出海。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Milestone Item 4 (Right Aligned on Desktop) -->
+                    <div class="md:grid md:grid-cols-2 md:gap-8 items-center">
+                        <div class="relative md:pr-8 order-last md:order-first">
+                             <div class="hidden md:block absolute top-1/2 -right-2.5 w-5 h-5 bg-sky-500 rounded-full border-4 border-dark-bg transform -translate-y-1/2"></div>
+                            <div class="bg-dark-card p-6 rounded-lg shadow-lg md:text-right">
+                                <h3 class="text-lg font-semibold text-dark-text-primary">荣获“优秀货代企业”</h3>
+                                <p class="mt-2 text-dark-text-secondary">凭借卓越服务，荣获行业协会颁发的“年度优秀货运代理企业”称号。</p>
+                            </div>
+                        </div>
+                        <div class="md:text-left md:pl-8 mb-4 md:mb-0 order-first md:order-last">
+                            <div class="inline-block bg-sky-500 text-white font-semibold py-1 px-3 rounded-full text-sm">2020年</div>
+                        </div>
+                    </div>
+
+                     <!-- Milestone Item 5 -->
+                    <div class="md:grid md:grid-cols-2 md:gap-8 items-center">
+                        <div class="md:text-right md:pr-8 mb-4 md:mb-0">
+                            <div class="inline-block bg-sky-500 text-white font-semibold py-1 px-3 rounded-full text-sm">2023年至今</div>
+                        </div>
+                        <div class="relative md:pl-8">
+                            <div class="hidden md:block absolute top-1/2 -left-2.5 w-5 h-5 bg-sky-500 rounded-full border-4 border-dark-bg transform -translate-y-1/2"></div>
+                            <div class="bg-dark-card p-6 rounded-lg shadow-lg">
+                                <h3 class="text-lg font-semibold text-dark-text-primary">数字化转型与全球拓展</h3>
+                                <p class="mt-2 text-dark-text-secondary">全面推进数字化转型，升级物流管理系统，并进一步拓展全球服务网络，致力于提供更智能、更高效的物流服务。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications & Awards Section -->
+        <section id="certifications" class="py-16 bg-dark-card rounded-lg shadow-xl -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-sky-400 sm:text-4xl">资质与荣誉</h2>
+                <p class="mt-4 text-lg text-dark-text-secondary">
+                    专业的认证与业界的认可，是我们服务品质的保证。
+                </p>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 place-items-center">
+                <!-- 示例资质，请替换为真实图片或图标 -->
+                <div class="bg-dark-bg p-4 rounded-lg shadow-md w-full h-32 flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
+                    <div class="text-center">
+                        <i class="fas fa-award fa-3x text-amber-400"></i>
+                        <p class="mt-2 text-sm text-dark-text-secondary">NVOCC 资质</p>
+                    </div>
+                </div>
+                <div class="bg-dark-bg p-4 rounded-lg shadow-md w-full h-32 flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
+                    <div class="text-center">
+                        <i class="fas fa-certificate fa-3x text-amber-400"></i>
+                        <p class="mt-2 text-sm text-dark-text-secondary">ISO9001认证</p>
+                    </div>
+                </div>
+                <div class="bg-dark-bg p-4 rounded-lg shadow-md w-full h-32 flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
+                    <div class="text-center">
+                        <i class="fas fa-medal fa-3x text-amber-400"></i>
+                        <p class="mt-2 text-sm text-dark-text-secondary">优秀货代企业</p>
+                    </div>
+                </div>
+                <div class="bg-dark-bg p-4 rounded-lg shadow-md w-full h-32 flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
+                    <div class="text-center">
+                        <i class="fas fa-star fa-3x text-amber-400"></i>
+                        <p class="mt-2 text-sm text-dark-text-secondary">AEO认证企业</p>
+                    </div>
+                </div>
+                <div class="bg-dark-bg p-4 rounded-lg shadow-md w-full h-32 flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
+                    <div class="text-center">
+                        <i class="fas fa-handshake fa-3x text-amber-400"></i>
+                        <p class="mt-2 text-sm text-dark-text-secondary">WCA成员</p>
+                    </div>
+                </div>
+                <!-- 可添加更多 -->
+            </div>
+        </section>
+
+        <!-- Team Introduction (Optional, can be brief) -->
+        <section id="team" class="py-16">
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-sky-400 sm:text-4xl">我们的团队</h2>
+                <p class="mt-4 text-lg text-dark-text-secondary">
+                    一群充满激情、经验丰富的物流专家，竭诚为您服务。
+                </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Team Member Card 1 -->
+                <div class="bg-dark-card rounded-lg shadow-xl p-6 text-center transform hover:-translate-y-2 transition-transform duration-300">
+                    <!-- 图片来源: https://www.pexels.com/photo/man-in-black-suit-jacket-3184611/ (示例) -->
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="团队成员1">
+                    <h3 class="text-xl font-semibold text-dark-text-primary">王明</h3>
+                    <p class="text-sky-400">总经理</p>
+                    <p class="mt-2 text-sm text-dark-text-secondary">超过15年国际物流行业经验，致力于公司战略发展与客户关系维护。</p>
+                </div>
+                <!-- Team Member Card 2 -->
+                <div class="bg-dark-card rounded-lg shadow-xl p-6 text-center transform hover:-translate-y-2 transition-transform duration-300">
+                    <!-- 图片来源: https://www.pexels.com/photo/woman-in-white-long-sleeve-shirt-smiling-3769021/ (示例) -->
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="团队成员2">
+                    <h3 class="text-xl font-semibold text-dark-text-primary">李娜</h3>
+                    <p class="text-sky-400">运营总监</p>
+                    <p class="mt-2 text-sm text-dark-text-secondary">精通各类货运操作流程，负责优化运营效率，保障服务质量。</p>
+                </div>
+                <!-- Team Member Card 3 -->
+                <div class="bg-dark-card rounded-lg shadow-xl p-6 text-center transform hover:-translate-y-2 transition-transform duration-300">
+                    <!-- 图片来源: https://www.pexels.com/photo/man-wearing-black-suit-jacket-and-eyeglasses-3184291/ (示例) -->
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="团队成员3">
+                    <h3 class="text-xl font-semibold text-dark-text-primary">张伟</h3>
+                    <p class="text-sky-400">市场经理</p>
+                    <p class="mt-2 text-sm text-dark-text-secondary">敏锐洞察市场动态，负责拓展新业务，提升品牌影响力。</p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="contact.html" class="inline-flex items-center px-6 py-3 border border-sky-500 text-base font-medium rounded-md text-sky-400 hover:bg-sky-500 hover:text-white transition-colors">
+                    加入我们 / 联系团队 <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (same as home.html) -->
+    <footer class="bg-dark-card border-t border-dark-border">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">关于我们</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="about.html#company-profile" class="text-base text-dark-text-secondary hover:text-dark-text-primary">公司简介</a></li>
+                        <li><a href="about.html#our-mission" class="text-base text-dark-text-secondary hover:text-dark-text-primary">企业文化</a></li>
+                        <li><a href="about.html#milestones" class="text-base text-dark-text-secondary hover:text-dark-text-primary">发展历程</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">核心服务</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="services.html#sea-freight" class="text-base text-dark-text-secondary hover:text-dark-text-primary">国际海运</a></li>
+                        <li><a href="services.html#air-freight" class="text-base text-dark-text-secondary hover:text-dark-text-primary">国际空运</a></li>
+                        <li><a href="services.html#land-transport" class="text-base text-dark-text-secondary hover:text-dark-text-primary">陆路运输</a></li>
+                        <li><a href="services.html#ecommerce-logistics" class="text-base text-dark-text-secondary hover:text-dark-text-primary">跨境电商物流</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">快速链接</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="tracking.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">货物追踪</a></li>
+                        <li><a href="inquiry.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">在线询价</a></li>
+                        <li><a href="news.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">新闻中心</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">联系我们</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-map-marker-alt mr-2 text-sky-400"></i> 深圳市XX区XX街道XX号</li>
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-phone-alt mr-2 text-sky-400"></i> +86 755 1234 5678</li>
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-envelope mr-2 text-sky-400"></i> info@sharplinker.com</li>
+                    </ul>
+                    <div class="mt-6 flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-gray-300"><span class="sr-only">微信公众号</span><i class="fab fa-weixin fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gray-300"><span class="sr-only">LinkedIn</span><i class="fab fa-linkedin fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-dark-border pt-8 md:flex md:items-center md:justify-between">
+                <p class="text-base text-dark-text-secondary md:mt-0 md:order-1">
+                    &copy; ${new Date().getFullYear()} 厦普林克国际物流 (深圳) 有限公司. All rights reserved.
+                </p>
+                <p class="mt-4 text-xs text-gray-500 md:mt-0 md:order-2">
+                    原型设计与实现 by AI Agent. 图片来源: Unsplash, Pexels.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButtonAbout = document.querySelector('[aria-controls="mobile-menu-about"]');
+        const mobileMenuAbout = document.getElementById('mobile-menu-about');
+        if (mobileMenuButtonAbout && mobileMenuAbout) {
+            mobileMenuButtonAbout.addEventListener('click', () => {
+                const isExpanded = mobileMenuButtonAbout.getAttribute('aria-expanded') === 'true' || false;
+                mobileMenuButtonAbout.setAttribute('aria-expanded', !isExpanded);
+                mobileMenuAbout.classList.toggle('hidden');
+                const icon = mobileMenuButtonAbout.querySelector('i');
+                if (icon) {
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

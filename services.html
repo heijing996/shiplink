@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务中心 - 厦普林克国际物流</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#0052CC',
+                        'dark-bg': '#0F172A',
+                        'dark-card': '#1E293B',
+                        'dark-border': '#334155',
+                        'dark-text-primary': '#E2E8F0',
+                        'dark-text-secondary': '#94A3B8',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .service-header-bg {
+            /* 图片来源: https://unsplash.com/photos/aerial-view-of-cargo-ship-on-sea-during-daytime-oGmf8o5CRXg */
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .service-card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-dark-text-primary font-sans">
+
+    <!-- Navigation Bar (same as home.html) -->
+    <nav class="bg-dark-card shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0">
+                        <img class="h-10 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-sky-500.svg" alt="厦普林克物流Logo">
+                    </a>
+                    <span class="ml-3 text-xl font-semibold text-sky-400">厦普林克国际物流</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="home.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">首页</a>
+                        <a href="about.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">关于我们</a>
+                        <a href="services.html" class="bg-dark-bg text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">服务中心</a>
+                        <a href="news.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">新闻中心</a>
+                        <a href="tracking.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">货物追踪</a>
+                        <a href="inquiry.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">在线询价</a>
+                        <a href="contact.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">联系我们</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="bg-dark-card inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu-services" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu-services">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="home.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">首页</a>
+                <a href="about.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">关于我们</a>
+                <a href="services.html" class="bg-dark-bg text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">服务中心</a>
+                <a href="news.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">新闻中心</a>
+                <a href="tracking.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">货物追踪</a>
+                <a href="inquiry.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">在线询价</a>
+                <a href="contact.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">联系我们</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="service-header-bg">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">我们的服务</h1>
+            <p class="mt-6 max-w-3xl mx-auto text-xl text-gray-300">
+                提供全面的国际物流解决方案，满足您多样化的运输需求。
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Service Card: International Sea Freight -->
+            <div id="sea-freight" class="bg-dark-card rounded-xl shadow-2xl overflow-hidden service-card-hover">
+                <!-- 图片来源: https://www.pexels.com/photo/aerial-view-of-cargo-ship-on-sea-3840441/ -->
+                <img class="w-full h-56 object-cover" src="https://images.pexels.com/photos/3840441/pexels-photo-3840441.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="国际海运">
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-ship fa-2x text-sky-400 mr-3"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text-primary">国际海运</h3>
+                    </div>
+                    <p class="text-dark-text-secondary mb-4">
+                        提供整箱 (FCL) 和拼箱 (LCL) 服务，覆盖全球主要港口。我们与各大船公司紧密合作，确保舱位和具有竞争力的价格。
+                    </p>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-1 mb-4 text-sm">
+                        <li>全球航线覆盖</li>
+                        <li>特种箱运输 (冷藏、开顶、框架)</li>
+                        <li>门到门、港到港服务</li>
+                        <li>实时货物追踪</li>
+                    </ul>
+                    <a href="inquiry.html?service=sea-freight" class="inline-block bg-sky-500 text-white px-5 py-2 rounded-md hover:bg-sky-600 transition-colors text-sm font-medium">获取报价</a>
+                </div>
+            </div>
+
+            <!-- Service Card: International Air Freight -->
+            <div id="air-freight" class="bg-dark-card rounded-xl shadow-2xl overflow-hidden service-card-hover">
+                <!-- 图片来源: https://www.pexels.com/photo/white-airplane-on-airport-358319/ -->
+                <img class="w-full h-56 object-cover" src="https://images.pexels.com/photos/358319/pexels-photo-358319.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="国际空运">
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-plane-departure fa-2x text-sky-400 mr-3"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text-primary">国际空运</h3>
+                    </div>
+                    <p class="text-dark-text-secondary mb-4">
+                        快速、可靠的全球空运服务。无论是普货还是急件，我们都能提供定制化的空运方案，确保货物安全准时送达。
+                    </p>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-1 mb-4 text-sm">
+                        <li>全球主要机场覆盖</li>
+                        <li>优先航班与经济航班选择</li>
+                        <li>危险品与温控货物处理</li>
+                        <li>机场到机场、门到门服务</li>
+                    </ul>
+                    <a href="inquiry.html?service=air-freight" class="inline-block bg-sky-500 text-white px-5 py-2 rounded-md hover:bg-sky-600 transition-colors text-sm font-medium">获取报价</a>
+                </div>
+            </div>
+
+            <!-- Service Card: Land Transport -->
+            <div id="land-transport" class="bg-dark-card rounded-xl shadow-2xl overflow-hidden service-card-hover">
+                <!-- 图片来源: https://www.pexels.com/photo/truck-on-a-highway-6170358/ -->
+                <img class="w-full h-56 object-cover" src="https://images.pexels.com/photos/6170358/pexels-photo-6170358.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="陆路运输">
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-truck fa-2x text-sky-400 mr-3"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text-primary">陆路运输</h3>
+                    </div>
+                    <p class="text-dark-text-secondary mb-4">
+                        提供国内及跨境卡车运输、铁路运输服务。灵活的调度和广泛的陆运网络，满足您最后一公里及内陆运输需求。
+                    </p>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-1 mb-4 text-sm">
+                        <li>整车 (FTL) 与零担 (LTL)</li>
+                        <li>中港运输、中欧班列</li>
+                        <li>特种车辆运输</li>
+                        <li>GPS实时监控</li>
+                    </ul>
+                    <a href="inquiry.html?service=land-transport" class="inline-block bg-sky-500 text-white px-5 py-2 rounded-md hover:bg-sky-600 transition-colors text-sm font-medium">获取报价</a>
+                </div>
+            </div>
+
+            <!-- Service Card: Warehousing & Distribution -->
+            <div id="warehousing" class="bg-dark-card rounded-xl shadow-2xl overflow-hidden service-card-hover">
+                <!-- 图片来源: https://www.pexels.com/photo/view-of-a-warehouse-7675003/ -->
+                <img class="w-full h-56 object-cover" src="https://images.pexels.com/photos/7675003/pexels-photo-7675003.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="仓储与配送">
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-warehouse fa-2x text-sky-400 mr-3"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text-primary">仓储与配送</h3>
+                    </div>
+                    <p class="text-dark-text-secondary mb-4">
+                        现代化的仓储设施和高效的配送网络。提供货物存储、分拣、包装、贴标以及最后一公里配送等增值服务。
+                    </p>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-1 mb-4 text-sm">
+                        <li>保税仓与非保税仓</li>
+                        <li>库存管理系统 (WMS)</li>
+                        <li>订单履行服务</li>
+                        <li>定制化包装方案</li>
+                    </ul>
+                    <a href="inquiry.html?service=warehousing" class="inline-block bg-sky-500 text-white px-5 py-2 rounded-md hover:bg-sky-600 transition-colors text-sm font-medium">获取报价</a>
+                </div>
+            </div>
+
+            <!-- Service Card: Customs Brokerage -->
+            <div id="customs-brokerage" class="bg-dark-card rounded-xl shadow-2xl overflow-hidden service-card-hover">
+                <!-- 图片来源: https://www.pexels.com/photo/people-working-in-an-office-3184306/ (示意海关文件处理) -->
+                <img class="w-full h-56 object-cover" src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="报关报检">
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-file-invoice fa-2x text-sky-400 mr-3"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text-primary">报关报检</h3>
+                    </div>
+                    <p class="text-dark-text-secondary mb-4">
+                        专业的报关团队，熟悉各国海关法规。提供高效、合规的进出口报关、报检、退税等一站式服务，确保货物顺利通关。
+                    </p>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-1 mb-4 text-sm">
+                        <li>AEO认证报关行</li>
+                        <li>关税咨询与筹划</li>
+                        <li>各类许可证代办</li>
+                        <li>商品归类服务</li>
+                    </ul>
+                    <a href="inquiry.html?service=customs" class="inline-block bg-sky-500 text-white px-5 py-2 rounded-md hover:bg-sky-600 transition-colors text-sm font-medium">获取报价</a>
+                </div>
+            </div>
+
+            <!-- Service Card: E-commerce Logistics -->
+            <div id="ecommerce-logistics" class="bg-dark-card rounded-xl shadow-2xl overflow-hidden service-card-hover">
+                <!-- 图片来源: https://www.pexels.com/photo/person-holding-a-smartphone-and-a-credit-card-4386433/ (示意电商购物) -->
+                <img class="w-full h-56 object-cover" src="https://images.pexels.com/photos/4386433/pexels-photo-4386433.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="跨境电商物流">
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-shopping-cart fa-2x text-sky-400 mr-3"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text-primary">跨境电商物流</h3>
+                    </div>
+                    <p class="text-dark-text-secondary mb-4">
+                        为跨境电商卖家量身定制的物流解决方案。包括海外仓储、一件代发、FBA头程、国际小包等，助力卖家拓展全球市场。
+                    </p>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-1 mb-4 text-sm">
+                        <li>多平台对接 (Amazon, eBay, Shopify)</li>
+                        <li>退换货处理</li>
+                        <li>多种派送渠道选择</li>
+                        <li>税务与合规咨询</li>
+                    </ul>
+                    <a href="inquiry.html?service=ecommerce" class="inline-block bg-sky-500 text-white px-5 py-2 rounded-md hover:bg-sky-600 transition-colors text-sm font-medium">获取报价</a>
+                </div>
+            </div>
+
+            <!-- Service Card: Supply Chain Solutions -->
+            <div id="supply-chain" class="bg-dark-card rounded-xl shadow-2xl overflow-hidden service-card-hover lg:col-span-3 md:col-span-2">
+                 <!-- 图片来源: https://www.pexels.com/photo/network-of-connected-dots-and-lines-57007/ -->
+                <img class="w-full h-64 object-cover" src="https://images.pexels.com/photos/57007/pexels-photo-57007.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="供应链解决方案">
+                <div class="p-8">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-cogs fa-2x text-sky-400 mr-4"></i>
+                        <h3 class="text-3xl font-semibold text-dark-text-primary">供应链解决方案</h3>
+                    </div>
+                    <p class="text-dark-text-secondary mb-6 text-lg">
+                        我们不仅仅提供单一环节的物流服务，更致力于为客户设计和实施端到端的供应链解决方案。通过深入分析您的业务需求，我们整合各项服务，优化流程，降低成本，提升供应链的整体效率和韧性。
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <h4 class="text-xl font-medium text-sky-300 mb-2">方案特点：</h4>
+                            <ul class="list-disc list-inside text-dark-text-secondary space-y-1">
+                                <li>定制化设计，满足个性需求</li>
+                                <li>全流程可视化，实时掌控</li>
+                                <li>风险管理与应急预案</li>
+                                <li>持续优化与改进</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-medium text-sky-300 mb-2">服务内容：</h4>
+                            <ul class="list-disc list-inside text-dark-text-secondary space-y-1">
+                                <li>供应链诊断与咨询</li>
+                                <li>采购物流与生产物流</li>
+                                <li>VMI (供应商管理库存)</li>
+                                <li>逆向物流解决方案</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="contact.html?subject=SupplyChainSolution" class="inline-flex items-center bg-gradient-to-r from-sky-500 to-indigo-600 text-white px-8 py-3 rounded-lg hover:from-sky-600 hover:to-indigo-700 transition-all text-lg font-semibold shadow-lg">
+                        <i class="fas fa-headset mr-2"></i> 咨询专家
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action Section -->
+        <section class="py-16 mt-12 bg-dark-card rounded-lg shadow-xl -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-extrabold text-sky-400 sm:text-4xl">准备好开始了吗？</h2>
+                <p class="mt-4 text-lg text-dark-text-secondary">
+                    无论您的物流需求多么复杂，我们的专家团队都能为您提供最佳解决方案。立即联系我们，获取免费咨询和报价。
+                </p>
+                <div class="mt-8 flex justify-center space-x-4">
+                    <a href="inquiry.html" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-sky-500 hover:bg-sky-600 transition-colors">
+                        <i class="fas fa-calculator mr-2"></i> 在线询价
+                    </a>
+                    <a href="contact.html" class="inline-flex items-center justify-center px-6 py-3 border border-sky-500 text-base font-medium rounded-md text-sky-400 hover:bg-sky-500 hover:text-white transition-colors">
+                        <i class="fas fa-phone-alt mr-2"></i> 联系我们
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (same as home.html) -->
+    <footer class="bg-dark-card border-t border-dark-border mt-12">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">关于我们</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="about.html#company-profile" class="text-base text-dark-text-secondary hover:text-dark-text-primary">公司简介</a></li>
+                        <li><a href="about.html#our-mission" class="text-base text-dark-text-secondary hover:text-dark-text-primary">企业文化</a></li>
+                        <li><a href="about.html#milestones" class="text-base text-dark-text-secondary hover:text-dark-text-primary">发展历程</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">核心服务</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="services.html#sea-freight" class="text-base text-dark-text-secondary hover:text-dark-text-primary">国际海运</a></li>
+                        <li><a href="services.html#air-freight" class="text-base text-dark-text-secondary hover:text-dark-text-primary">国际空运</a></li>
+                        <li><a href="services.html#land-transport" class="text-base text-dark-text-secondary hover:text-dark-text-primary">陆路运输</a></li>
+                        <li><a href="services.html#ecommerce-logistics" class="text-base text-dark-text-secondary hover:text-dark-text-primary">跨境电商物流</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">快速链接</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="tracking.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">货物追踪</a></li>
+                        <li><a href="inquiry.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">在线询价</a></li>
+                        <li><a href="news.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">新闻中心</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">联系我们</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-map-marker-alt mr-2 text-sky-400"></i> 深圳市XX区XX街道XX号</li>
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-phone-alt mr-2 text-sky-400"></i> +86 755 1234 5678</li>
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-envelope mr-2 text-sky-400"></i> info@sharplinker.com</li>
+                    </ul>
+                    <div class="mt-6 flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-gray-300"><span class="sr-only">微信公众号</span><i class="fab fa-weixin fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gray-300"><span class="sr-only">LinkedIn</span><i class="fab fa-linkedin fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-dark-border pt-8 md:flex md:items-center md:justify-between">
+                <p class="text-base text-dark-text-secondary md:mt-0 md:order-1">
+                    &copy; ${new Date().getFullYear()} 厦普林克国际物流 (深圳) 有限公司. All rights reserved.
+                </p>
+                <p class="mt-4 text-xs text-gray-500 md:mt-0 md:order-2">
+                    原型设计与实现 by AI Agent. 图片来源: Unsplash, Pexels.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButtonServices = document.querySelector('[aria-controls="mobile-menu-services"]');
+        const mobileMenuServices = document.getElementById('mobile-menu-services');
+        if (mobileMenuButtonServices && mobileMenuServices) {
+            mobileMenuButtonServices.addEventListener('click', () => {
+                const isExpanded = mobileMenuButtonServices.getAttribute('aria-expanded') === 'true' || false;
+                mobileMenuButtonServices.setAttribute('aria-expanded', !isExpanded);
+                mobileMenuServices.classList.toggle('hidden');
+                const icon = mobileMenuButtonServices.querySelector('i');
+                if (icon) {
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
