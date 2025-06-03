@@ -41,13 +41,13 @@
             <div class="flex items-center justify-between h-20">
                 <div class="flex items-center">
                     <a href="index.html" class="flex-shrink-0">
-                        <img class="h-10 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-sky-500.svg" alt="厦普林克物流Logo">
+                        <img class="h-10 w-auto" src="assets/images/companylogo.jpg" alt="厦普林克国际物流Logo">
                     </a>
                     <span class="ml-3 text-xl font-semibold text-sky-400">厦普林克国际物流</span>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="home.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">首页</a>
+                        <a href="index.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">首页</a>
                         <a href="about.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">关于我们</a>
                         <a href="services.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">服务中心</a>
                         <a href="news.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">新闻中心</a>
@@ -67,7 +67,7 @@
         <!-- Mobile menu -->
         <div class="md:hidden hidden" id="mobile-menu-inquiry">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="home.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">首页</a>
+                <a href="index.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">首页</a>
                 <a href="about.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">关于我们</a>
                 <a href="services.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">服务中心</a>
                 <a href="news.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">新闻中心</a>
@@ -93,7 +93,7 @@
         
         <section id="inquiry-form-section" class="bg-dark-card shadow-xl rounded-lg p-6 sm:p-8 md:p-10">
             <h2 class="text-2xl sm:text-3xl font-semibold text-dark-text-primary mb-8 text-center">填写询价信息</h2>
-            <form id="inquiryForm" class="space-y-8">
+            <form id="inquiryForm" class="space-y-8" method="POST" action="https://formspree.io/f/mgvkgzvj">
                 <!-- Route Information -->
                 <fieldset>
                     <legend class="text-lg font-medium text-sky-400 mb-4">1. 路线信息</legend>
@@ -240,9 +240,9 @@
                 <div>
                     <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">联系我们</h3>
                     <ul role="list" class="mt-4 space-y-4">
-                        <li class="text-base text-dark-text-secondary"><i class="fas fa-map-marker-alt mr-2 text-sky-400"></i> 深圳市XX区XX街道XX号</li>
-                        <li class="text-base text-dark-text-secondary"><i class="fas fa-phone-alt mr-2 text-sky-400"></i> +86 755 1234 5678</li>
-                        <li class="text-base text-dark-text-secondary"><i class="fas fa-envelope mr-2 text-sky-400"></i> info@sharplinker.com</li>
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-map-marker-alt mr-2 text-sky-400"></i> 深圳市龙华区龙华街道富康社区天汇大厦C栋3楼308</li>
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-phone-alt mr-2 text-sky-400"></i> +86 13129567120</li>
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-envelope mr-2 text-sky-400"></i> MichaelZhang@szshiplink.com</li>
                     </ul>
                     <div class="mt-6 flex space-x-6">
                         <a href="#" class="text-gray-400 hover:text-gray-300"><span class="sr-only">微信公众号</span><i class="fab fa-weixin fa-lg"></i></a>
@@ -255,7 +255,7 @@
                     &copy; ${new Date().getFullYear()} 厦普林克国际物流 (深圳) 有限公司. All rights reserved.
                 </p>
                 <p class="mt-4 text-xs text-gray-500 md:mt-0 md:order-2">
-                    原型设计与实现 by AI Agent. 图片来源: Unsplash.
+                    原型设计与实现 by AI Agent. 图片来源: Unsplash, Pexels.
                 </p>
             </div>
         </div>
@@ -290,7 +290,7 @@
         if (inquiryForm) {
             inquiryForm.addEventListener('submit', function(event) {
                 event.preventDefault();
-                
+
                 // Basic client-side validation (Tailwind uses browser's default for required)
                 let isValid = true;
                 inquiryForm.querySelectorAll('[required]').forEach(input => {
@@ -315,14 +315,66 @@
                     return;
                 }
 
-                // Simulate form submission
-                console.log('Simulating inquiry submission...');
-                // For prototype, always show success
-                inquiryFormSection.classList.add('hidden');
-                inquiryErrorSection.classList.add('hidden');
-                inquirySuccessSection.classList.remove('hidden');
-                if(inquiryRefNo) inquiryRefNo.textContent = 'INQ-' + Date.now().toString().slice(-6);
-                window.scrollTo(0, inquirySuccessSection.offsetTop - 100); // Scroll to success message
+                // Get form data
+                const formData = new FormData(inquiryForm);
+                // Convert FormData to a plain object or URLSearchParams if needed by Formspree,
+                // but fetch with FormData usually works directly.
+
+                // Simulate form submission -> Send data to Formspree
+                console.log('Sending inquiry submission to Formspree...');
+
+                fetch(inquiryForm.action, {
+                    method: inquiryForm.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json' // Recommended by Formspree for AJAX submissions
+                    }
+                })
+                .then(response => {
+                    if (response.ok) { // Formspree returns 200 for success
+                        console.log('Inquiry submitted successfully to Formspree.');
+                        inquiryFormSection.classList.add('hidden');
+                        inquiryErrorSection.classList.add('hidden');
+                        inquirySuccessSection.classList.remove('hidden');
+                        // Generate a simple reference number (for display only, Formspree doesn't provide one this way)
+                        if(inquiryRefNo) inquiryRefNo.textContent = 'INQ-' + Date.now().toString().slice(-6);
+                        window.scrollTo(0, inquirySuccessSection.offsetTop - 100); // Scroll to success message
+                        inquiryForm.reset(); // Reset form after successful submission
+                        // Reset red borders after reset
+                         inquiryForm.querySelectorAll('.border-red-500').forEach(el => el.classList.remove('border-red-500'));
+
+                    } else { // Handle errors (e.g., 400 Bad Request, 429 Too Many Requests)
+                         response.json().then(data => {
+                            console.error('Formspree submission error:', data);
+                            let errorMessage = '提交询价时发生错误。请稍后重试。';
+                            if (data && data.errors) {
+                                errorMessage = data.errors.map(error => error.field + ': ' + error.message).join(', ');
+                            } else if (data && data.error) {
+                                errorMessage = data.error;
+                            }
+                            inquiryErrorMessage.textContent = '提交失败: ' + errorMessage;
+                            inquiryFormSection.classList.add('hidden');
+                            inquirySuccessSection.classList.add('hidden');
+                            inquiryErrorSection.classList.remove('hidden');
+                            window.scrollTo(0, inquiryErrorSection.offsetTop - 100); // Scroll to error message
+                        }).catch(() => {
+                            console.error('Formspree submission error: Unable to parse error response.');
+                             inquiryErrorMessage.textContent = '提交失败: 发生未知错误。';
+                             inquiryFormSection.classList.add('hidden');
+                             inquirySuccessSection.classList.add('hidden');
+                             inquiryErrorSection.classList.remove('hidden');
+                             window.scrollTo(0, inquiryErrorSection.offsetTop - 100); // Scroll to error message
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Fetch error during inquiry submission:', error);
+                    inquiryErrorMessage.textContent = '提交失败: 网络或服务器连接错误。';
+                    inquiryFormSection.classList.add('hidden');
+                    inquirySuccessSection.classList.add('hidden');
+                    inquiryErrorSection.classList.remove('hidden');
+                     window.scrollTo(0, inquiryErrorSection.offsetTop - 100); // Scroll to error message
+                });
             });
         }
 
