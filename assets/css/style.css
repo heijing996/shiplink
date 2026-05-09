@@ -1,4 +1,205 @@
-/* Custom styles can be added here if needed, supplementing Tailwind CSS */
 body {
-    /* Example: আপনি যদি একটি কাস্টম ডিফল্ট ফন্ট সেট করতে চান যা Tailwind দ্বারা আচ্ছাদিত নয় */
+    letter-spacing: 0.01em;
+}
+
+main > section {
+    margin-bottom: 1.5rem;
+}
+
+nav {
+    border-bottom: 1px solid rgba(51, 65, 85, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+.hero-bg,
+.page-header-bg,
+.service-header-bg,
+.knowledge-header-bg,
+.tracking-header-bg,
+.inquiry-header-bg,
+.contact-header-bg {
+    position: relative;
+}
+
+.hero-bg > div,
+.page-header-bg > div,
+.service-header-bg > div,
+.knowledge-header-bg > div,
+.tracking-header-bg > div,
+.inquiry-header-bg > div,
+.contact-header-bg > div {
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-bg h1,
+.page-header-bg h1,
+.service-header-bg h1,
+.knowledge-header-bg h1,
+.tracking-header-bg h1,
+.inquiry-header-bg h1,
+.contact-header-bg h1 {
+    line-height: 1.08;
+    text-wrap: balance;
+}
+
+.hero-bg p,
+.page-header-bg p,
+.service-header-bg p,
+.knowledge-header-bg p,
+.tracking-header-bg p,
+.inquiry-header-bg p,
+.contact-header-bg p {
+    line-height: 1.75;
+}
+
+.bg-dark-card,
+.bg-dark-bg {
+    border-color: rgba(51, 65, 85, 0.75);
+}
+
+section.bg-dark-card,
+section .bg-dark-card,
+article.bg-dark-card,
+.service-card-hover,
+.rounded-2xl,
+.rounded-xl {
+    border: 1px solid rgba(51, 65, 85, 0.65);
+}
+
+.service-card-hover,
+article.bg-dark-card,
+.flow-root.bg-dark-bg,
+.bg-dark-card.rounded-lg,
+.bg-dark-card.rounded-xl,
+.bg-dark-card.rounded-2xl {
+    box-shadow: 0 18px 45px rgba(2, 6, 23, 0.24);
+}
+
+.service-card-hover,
+article.bg-dark-card,
+.flow-root.bg-dark-bg {
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-card-hover:hover,
+article.bg-dark-card:hover,
+.flow-root.bg-dark-bg:hover {
+    transform: translateY(-4px);
+    border-color: rgba(14, 165, 233, 0.55);
+    box-shadow: 0 22px 55px rgba(2, 132, 199, 0.14);
+}
+
+.service-card-hover {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.service-card-hover > img,
+article img {
+    filter: saturate(0.95) contrast(1.05);
+}
+
+.service-card-hover > div:last-child {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.service-card-hover h3,
+article h3 {
+    line-height: 1.25;
+}
+
+.service-card-hover p,
+article p,
+main li,
+main dd {
+    line-height: 1.75;
+}
+
+.service-card-hover ul,
+main ul {
+    line-height: 1.8;
+}
+
+.service-card-hover a:last-child {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+article.bg-dark-card > div:first-child > div:first-child {
+    box-shadow: 0 12px 28px rgba(14, 165, 233, 0.22);
+}
+
+main a[class*="bg-sky"],
+main a[class*="border-sky"] {
+    min-height: 44px;
+}
+
+img {
+    background-color: #1E293B;
+}
+
+footer {
+    border-top: 1px solid rgba(51, 65, 85, 0.85);
+}
+
+.map-placeholder {
+    border: 1px solid rgba(51, 65, 85, 0.85);
+}
+
+@media (max-width: 640px) {
+    .hero-bg > div,
+    .page-header-bg > div,
+    .service-header-bg > div,
+    .knowledge-header-bg > div,
+    .tracking-header-bg > div,
+    .inquiry-header-bg > div,
+    .contact-header-bg > div {
+        min-height: 300px;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .hero-bg h1,
+    .page-header-bg h1,
+    .service-header-bg h1,
+    .knowledge-header-bg h1,
+    .tracking-header-bg h1,
+    .inquiry-header-bg h1,
+    .contact-header-bg h1 {
+        font-size: 2.25rem;
+    }
+
+    main {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    main > section {
+        margin-bottom: 1rem;
+    }
+
+    .service-card-hover img,
+    article img {
+        height: 12rem;
+    }
+
+    .service-card-hover > div:last-child,
+    article.bg-dark-card {
+        padding: 1.25rem;
+    }
+
+    main a[class*="bg-sky"],
+    main a[class*="border-sky"] {
+        width: 100%;
+    }
+
+    footer .grid {
+        row-gap: 2rem;
+    }
 }

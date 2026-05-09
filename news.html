@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新闻中心 - 厦普林克国际物流</title>
+    <title>物流知识 - 厦普林克国际物流</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -25,18 +25,10 @@
         }
     </script>
     <style>
-        .news-header-bg {
-            /* 图片来源: https://unsplash.com/photos/person-reading-newspaper-on-train-sYffw0LNr7s */
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+        .knowledge-header-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.62), rgba(0,0,0,0.62)), url('https://images.pexels.com/photos/5029646/pexels-photo-5029646.jpeg?auto=compress&cs=tinysrgb&w=1920&h=900&dpr=1');
             background-size: cover;
             background-position: center;
-        }
-        .news-card-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .news-card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.1), 0 8px 8px -5px rgba(0, 0, 0, 0.04);
         }
     </style>
 </head>
@@ -57,7 +49,7 @@
                         <a href="index.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">首页</a>
                         <a href="about.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">关于我们</a>
                         <a href="services.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">服务中心</a>
-                        <a href="news.html" class="bg-dark-bg text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">新闻中心</a>
+                        <a href="news.html" class="bg-dark-bg text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">物流知识</a>
                         <a href="tracking.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">货物追踪</a>
                         <a href="inquiry.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">在线询价</a>
                         <a href="contact.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">联系我们</a>
@@ -77,7 +69,7 @@
                 <a href="index.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">首页</a>
                 <a href="about.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">关于我们</a>
                 <a href="services.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">服务中心</a>
-                <a href="news.html" class="bg-dark-bg text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">新闻中心</a>
+                <a href="news.html" class="bg-dark-bg text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">物流知识</a>
                 <a href="tracking.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">货物追踪</a>
                 <a href="inquiry.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">在线询价</a>
                 <a href="contact.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">联系我们</a>
@@ -86,208 +78,171 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="news-header-bg">
+    <header class="knowledge-header-bg">
         <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">新闻与洞察</h1>
+            <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">物流知识</h1>
             <p class="mt-6 max-w-3xl mx-auto text-xl text-gray-300">
-                获取最新的公司动态、行业资讯和物流趋势解读。
+                面向外贸企业的国际运输、报关和询价常见问题，帮助您更清楚地准备出运需求。
             </p>
         </div>
     </header>
 
     <!-- Main Content Area -->
     <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        
-        <!-- Filter/Category Section (Optional) -->
-        <div class="mb-10 flex flex-wrap justify-center gap-2 sm:gap-4">
-            <button class="px-4 py-2 text-sm font-medium rounded-md bg-sky-500 text-white hover:bg-sky-600 transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-opacity-50">全部新闻</button>
-            <button class="px-4 py-2 text-sm font-medium rounded-md bg-dark-card text-dark-text-secondary hover:bg-gray-700 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-opacity-50">公司动态</button>
-            <button class="px-4 py-2 text-sm font-medium rounded-md bg-dark-card text-dark-text-secondary hover:bg-gray-700 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-opacity-50">行业观察</button>
-            <button class="px-4 py-2 text-sm font-medium rounded-md bg-dark-card text-dark-text-secondary hover:bg-gray-700 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-opacity-50">政策解读</button>
-        </div>
+        <section class="bg-dark-card rounded-2xl shadow-xl border border-dark-border p-8 md:p-10 mb-12">
+            <p class="text-sm font-semibold uppercase tracking-wider text-sky-400">出运前参考</p>
+            <h2 class="mt-3 text-3xl font-extrabold text-dark-text-primary sm:text-4xl">先把关键问题想清楚，询价会更准确</h2>
+            <p class="mt-4 text-lg text-dark-text-secondary leading-8">
+                以下内容适合作为出运前的基础参考。不同国家、品名、监管条件和航线安排会影响最终方案，具体报价和操作要求仍建议结合实际货物资料确认。
+            </p>
+        </section>
 
-        <!-- News List/Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-            <!-- News Card 1 -->
-            <article class="bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col news-card-hover">
-                <!-- 图片来源: https://www.pexels.com/photo/cargo-ship-on-the-ocean-3969060/ -->
-                <a href="news-detail-example.html?id=1" class="block">
-                    <img class="w-full h-52 object-cover" src="https://images.pexels.com/photos/3969060/pexels-photo-3969060.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="新闻图片1">
-                </a>
-                <div class="p-6 flex flex-col flex-grow">
-                    <div class="mb-2">
-                        <span class="inline-block bg-sky-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">公司动态</span>
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            <article class="bg-dark-card rounded-xl shadow-lg p-6 border border-dark-border">
+                <div class="flex items-start gap-4">
+                    <div class="flex h-12 w-12 flex-none items-center justify-center rounded-lg bg-sky-500 text-white"><i class="fas fa-ship"></i></div>
+                    <div>
+                        <p class="text-sm font-medium text-sky-400">海运询价</p>
+                        <h3 class="mt-1 text-xl font-semibold text-dark-text-primary">海运询价通常需要提供哪些信息？</h3>
                     </div>
-                    <a href="news-detail-example.html?id=1" class="block">
-                        <h3 class="text-xl font-semibold text-dark-text-primary hover:text-sky-400 transition-colors">厦普林克物流荣获"年度最佳物流服务商"称号</h3>
-                    </a>
-                    <p class="mt-3 text-sm text-dark-text-secondary flex-grow">
-                        凭借卓越的服务质量和客户满意度，厦普林克国际物流在近日举行的行业峰会上荣膺"年度最佳物流服务商"大奖。
-                    </p>
-                    <div class="mt-4 flex items-center text-xs text-gray-400">
-                        <i class="fas fa-calendar-alt mr-1.5"></i>
-                        <span>2024年7月15日</span>
-                        <span class="mx-2">|</span>
-                        <i class="fas fa-user mr-1.5"></i>
-                        <span>管理员</span>
-                    </div>
-                    <a href="news-detail-example.html?id=1" class="mt-4 inline-block text-sky-400 hover:text-sky-300 text-sm font-medium">阅读更多 <i class="fas fa-arrow-right ml-1"></i></a>
                 </div>
-            </article>
-
-            <!-- News Card 2 -->
-            <article class="bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col news-card-hover">
-                <!-- 图片来源: https://www.pexels.com/photo/an-airplane-flying-in-the-sky-723240/ -->
-                <a href="news-detail-example.html?id=2" class="block">
-                    <img class="w-full h-52 object-cover" src="https://images.pexels.com/photos/723240/pexels-photo-723240.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="新闻图片2">
-                </a>
-                <div class="p-6 flex flex-col flex-grow">
-                    <div class="mb-2">
-                        <span class="inline-block bg-teal-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">行业观察</span>
-                    </div>
-                    <a href="news-detail-example.html?id=2" class="block">
-                        <h3 class="text-xl font-semibold text-dark-text-primary hover:text-sky-400 transition-colors">全球供应链韧性面临新挑战：专家解读与应对策略</h3>
-                    </a>
-                    <p class="mt-3 text-sm text-dark-text-secondary flex-grow">
-                        近期地缘政治及气候变化对全球供应链造成冲击，行业专家就如何提升供应链韧性提出多项关键策略。
-                    </p>
-                    <div class="mt-4 flex items-center text-xs text-gray-400">
-                        <i class="fas fa-calendar-alt mr-1.5"></i>
-                        <span>2024年7月10日</span>
-                        <span class="mx-2">|</span>
-                        <i class="fas fa-user mr-1.5"></i>
-                        <span>行业分析师</span>
-                    </div>
-                    <a href="news-detail-example.html?id=2" class="mt-4 inline-block text-sky-400 hover:text-sky-300 text-sm font-medium">阅读更多 <i class="fas fa-arrow-right ml-1"></i></a>
-                </div>
-            </article>
-
-            <!-- News Card 3 -->
-            <article class="bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col news-card-hover">
-                <!-- 图片来源: https://www.pexels.com/photo/people-working-at-the-customs-office-7648792/ (示意政策文件) -->
-                <a href="news-detail-example.html?id=3" class="block">
-                    <img class="w-full h-52 object-cover" src="https://images.pexels.com/photos/7648792/pexels-photo-7648792.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="新闻图片3">
-                </a>
-                <div class="p-6 flex flex-col flex-grow">
-                    <div class="mb-2">
-                        <span class="inline-block bg-indigo-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">政策解读</span>
-                    </div>
-                    <a href="news-detail-example.html?id=3" class="block">
-                        <h3 class="text-xl font-semibold text-dark-text-primary hover:text-sky-400 transition-colors">最新出入境检验检疫政策调整对进出口企业的影响</h3>
-                    </a>
-                    <p class="mt-3 text-sm text-dark-text-secondary flex-grow">
-                        国家海关总署发布最新出入境检验检疫政策调整通知，本文将为您详细解读新政内容及其对相关企业的影响。
-                    </p>
-                    <div class="mt-4 flex items-center text-xs text-gray-400">
-                        <i class="fas fa-calendar-alt mr-1.5"></i>
-                        <span>2024年7月5日</span>
-                        <span class="mx-2">|</span>
-                        <i class="fas fa-user mr-1.5"></i>
-                        <span>政策研究员</span>
-                    </div>
-                    <a href="news-detail-example.html?id=3" class="mt-4 inline-block text-sky-400 hover:text-sky-300 text-sm font-medium">阅读更多 <i class="fas fa-arrow-right ml-1"></i></a>
-                </div>
-            </article>
-
-            <!-- News Card 4 -->
-            <article class="bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col news-card-hover">
-                <!-- 图片来源: https://www.pexels.com/photo/a-team-of-professionals-working-in-an-office-7551671/ -->
-                <a href="news-detail-example.html?id=4" class="block">
-                    <img class="w-full h-52 object-cover" src="https://images.pexels.com/photos/7551671/pexels-photo-7551671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="新闻图片4">
-                </a>
-                <div class="p-6 flex flex-col flex-grow">
-                    <div class="mb-2">
-                        <span class="inline-block bg-sky-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">公司动态</span>
-                    </div>
-                    <a href="news-detail-example.html?id=4" class="block">
-                        <h3 class="text-xl font-semibold text-dark-text-primary hover:text-sky-400 transition-colors">厦普林克物流开通东南亚新航线，助力区域贸易发展</h3>
-                    </a>
-                    <p class="mt-3 text-sm text-dark-text-secondary flex-grow">
-                        为满足日益增长的东南亚市场需求，厦普林克国际物流宣布正式开通连接中国与东南亚主要港口的新海运航线。
-                    </p>
-                    <div class="mt-4 flex items-center text-xs text-gray-400">
-                        <i class="fas fa-calendar-alt mr-1.5"></i>
-                        <span>2024年6月28日</span>
-                        <span class="mx-2">|</span>
-                        <i class="fas fa-user mr-1.5"></i>
-                        <span>管理员</span>
-                    </div>
-                    <a href="news-detail-example.html?id=4" class="mt-4 inline-block text-sky-400 hover:text-sky-300 text-sm font-medium">阅读更多 <i class="fas fa-arrow-right ml-1"></i></a>
-                </div>
-            </article>
-            
-            <!-- News Card 5 -->
-            <article class="bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col news-card-hover">
-                <!-- 图片来源: https://www.pexels.com/photo/drone-shot-of-a-port-7533347/ -->
-                <a href="news-detail-example.html?id=5" class="block">
-                    <img class="w-full h-52 object-cover" src="https://images.pexels.com/photos/7533347/pexels-photo-7533347.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="新闻图片5">
-                </a>
-                <div class="p-6 flex flex-col flex-grow">
-                    <div class="mb-2">
-                        <span class="inline-block bg-teal-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">行业观察</span>
-                    </div>
-                    <a href="news-detail-example.html?id=5" class="block">
-                        <h3 class="text-xl font-semibold text-dark-text-primary hover:text-sky-400 transition-colors">绿色物流：可持续发展在货运业的实践与未来</h3>
-                    </a>
-                    <p class="mt-3 text-sm text-dark-text-secondary flex-grow">
-                        随着环保意识的提升，绿色物流成为行业发展的重要趋势。本文探讨了当前货运业在可持续发展方面的实践案例和未来展望。
-                    </p>
-                    <div class="mt-4 flex items-center text-xs text-gray-400">
-                        <i class="fas fa-calendar-alt mr-1.5"></i>
-                        <span>2024年6月20日</span>
-                        <span class="mx-2">|</span>
-                        <i class="fas fa-user mr-1.5"></i>
-                        <span>行业分析师</span>
-                    </div>
-                    <a href="news-detail-example.html?id=5" class="mt-4 inline-block text-sky-400 hover:text-sky-300 text-sm font-medium">阅读更多 <i class="fas fa-arrow-right ml-1"></i></a>
-                </div>
-            </article>
-
-            <!-- News Card 6 -->
-            <article class="bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col news-card-hover">
-                <!-- 图片来源: https://www.pexels.com/photo/a-group-of-people-in-a-business-meeting-3184338/ -->
-                <a href="news-detail-example.html?id=6" class="block">
-                    <img class="w-full h-52 object-cover" src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="新闻图片6">
-                </a>
-                <div class="p-6 flex flex-col flex-grow">
-                    <div class="mb-2">
-                        <span class="inline-block bg-sky-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">公司动态</span>
-                    </div>
-                    <a href="news-detail-example.html?id=6" class="block">
-                        <h3 class="text-xl font-semibold text-dark-text-primary hover:text-sky-400 transition-colors">厦普林克物流参加2024亚洲国际物流技术与运输系统展览会</h3>
-                    </a>
-                    <p class="mt-3 text-sm text-dark-text-secondary flex-grow">
-                        我司于近日参加了在上海举办的亚洲国际物流技术与运输系统展览会，展示了最新的智慧物流解决方案，受到广泛关注。
-                    </p>
-                    <div class="mt-4 flex items-center text-xs text-gray-400">
-                        <i class="fas fa-calendar-alt mr-1.5"></i>
-                        <span>2024年6月15日</span>
-                        <span class="mx-2">|</span>
-                        <i class="fas fa-user mr-1.5"></i>
-                        <span>管理员</span>
-                    </div>
-                    <a href="news-detail-example.html?id=6" class="mt-4 inline-block text-sky-400 hover:text-sky-300 text-sm font-medium">阅读更多 <i class="fas fa-arrow-right ml-1"></i></a>
-                </div>
-            </article>
-        </div>
-
-        <!-- Pagination -->
-        <nav class="mt-16 flex items-center justify-between border-t border-dark-border px-4 py-3 sm:px-6" aria-label="Pagination">
-            <div class="hidden sm:block">
-                <p class="text-sm text-dark-text-secondary">
-                    显示 <span class="font-medium">1</span> 到 <span class="font-medium">6</span> (共 <span class="font-medium">23</span> 条结果)
+                <p class="mt-4 text-dark-text-secondary leading-7">
+                    建议提供货物品名、件数、毛重、体积、包装方式、起运港或提货地址、目的港或派送地址、贸易条款、预计出货时间，以及是否需要拖车、报关、保险、仓储或目的港配送。资料越完整，越容易判断整柜、拼箱、航线和费用构成。
                 </p>
-            </div>
-            <div class="flex flex-1 justify-between sm:justify-end">
-                <a href="#" class="relative inline-flex items-center rounded-md border border-dark-border bg-dark-card px-4 py-2 text-sm font-medium text-dark-text-secondary hover:bg-gray-700 transition-colors">
-                    上一页
-                </a>
-                <a href="#" class="relative ml-3 inline-flex items-center rounded-md border border-dark-border bg-dark-card px-4 py-2 text-sm font-medium text-dark-text-secondary hover:bg-gray-700 transition-colors">
-                    下一页
-                </a>
-            </div>
-        </nav>
+            </article>
 
+            <article class="bg-dark-card rounded-xl shadow-lg p-6 border border-dark-border">
+                <div class="flex items-start gap-4">
+                    <div class="flex h-12 w-12 flex-none items-center justify-center rounded-lg bg-sky-500 text-white"><i class="fas fa-plane-departure"></i></div>
+                    <div>
+                        <p class="text-sm font-medium text-sky-400">运输方式</p>
+                        <h3 class="mt-1 text-xl font-semibold text-dark-text-primary">空运和海运应该怎么选？</h3>
+                    </div>
+                </div>
+                <p class="mt-4 text-dark-text-secondary leading-7">
+                    空运更适合时效紧、货值高、批量较小或临时补货的货物，优势是速度快但单位成本较高。海运更适合大批量、成本敏感、交期较宽的货物，整体费用通常更有优势。实际选择还要结合客户交期、库存压力、货物属性和目的地派送条件综合判断。
+                </p>
+            </article>
+
+            <article class="bg-dark-card rounded-xl shadow-lg p-6 border border-dark-border">
+                <div class="flex items-start gap-4">
+                    <div class="flex h-12 w-12 flex-none items-center justify-center rounded-lg bg-sky-500 text-white"><i class="fas fa-boxes-stacked"></i></div>
+                    <div>
+                        <p class="text-sm font-medium text-sky-400">箱型选择</p>
+                        <h3 class="mt-1 text-xl font-semibold text-dark-text-primary">整柜 FCL 和拼箱 LCL 有什么区别？</h3>
+                    </div>
+                </div>
+                <p class="mt-4 text-dark-text-secondary leading-7">
+                    整柜适合货量较大、希望单独使用一个集装箱的出运场景，操作链条相对清晰。拼箱适合货量不足一整柜的货物，可以和其他货物共用集装箱分摊成本，但会涉及拼箱仓、装拆箱和目的港分拨等环节。选择时通常看体积、重量、时效要求和货物是否适合混装。
+                </p>
+            </article>
+
+            <article class="bg-dark-card rounded-xl shadow-lg p-6 border border-dark-border">
+                <div class="flex items-start gap-4">
+                    <div class="flex h-12 w-12 flex-none items-center justify-center rounded-lg bg-sky-500 text-white"><i class="fas fa-file-invoice"></i></div>
+                    <div>
+                        <p class="text-sm font-medium text-sky-400">报关资料</p>
+                        <h3 class="mt-1 text-xl font-semibold text-dark-text-primary">出口报关一般需要哪些资料？</h3>
+                    </div>
+                </div>
+                <p class="mt-4 text-dark-text-secondary leading-7">
+                    常见资料包括商业发票、装箱单、合同、报关委托资料、申报要素、产品用途和材质说明等。不同品名可能涉及监管条件、许可证、商检或品牌授权等额外要求。建议在订舱或安排提货前先确认 HS 编码和申报要素，避免临近截关才发现资料不完整。
+                </p>
+            </article>
+
+            <article class="bg-dark-card rounded-xl shadow-lg p-6 border border-dark-border">
+                <div class="flex items-start gap-4">
+                    <div class="flex h-12 w-12 flex-none items-center justify-center rounded-lg bg-sky-500 text-white"><i class="fas fa-receipt"></i></div>
+                    <div>
+                        <p class="text-sm font-medium text-sky-400">费用构成</p>
+                        <h3 class="mt-1 text-xl font-semibold text-dark-text-primary">国际物流报价通常由哪些费用组成？</h3>
+                    </div>
+                </div>
+                <p class="mt-4 text-dark-text-secondary leading-7">
+                    报价通常包含起运地费用、主运输费用、目的地费用以及可能产生的附加费用。海运可能涉及拖车、报关、码头、文件、海运费和目的港杂费；空运可能涉及提货、报关、安检、空运费和目的地清关派送。比较报价时不要只看单一运价，要看服务范围和费用是否完整。
+                </p>
+            </article>
+
+            <article class="bg-dark-card rounded-xl shadow-lg p-6 border border-dark-border">
+                <div class="flex items-start gap-4">
+                    <div class="flex h-12 w-12 flex-none items-center justify-center rounded-lg bg-sky-500 text-white"><i class="fas fa-calendar-check"></i></div>
+                    <div>
+                        <p class="text-sm font-medium text-sky-400">出运计划</p>
+                        <h3 class="mt-1 text-xl font-semibold text-dark-text-primary">货物出运前需要提前多久沟通？</h3>
+                    </div>
+                </div>
+                <p class="mt-4 text-dark-text-secondary leading-7">
+                    普通海运建议至少提前一到两周沟通，便于确认舱位、拖车、报关资料和截关时间。旺季、偏港、危险品、带电产品或需要特殊文件的货物，应更早确认。空运虽然操作周期较短，但也建议提前准备货物尺寸、重量、品名和目的地要求，以便更快判断航班和费用。
+                </p>
+            </article>
+
+            <article class="bg-dark-card rounded-xl shadow-lg p-6 border border-dark-border">
+                <div class="flex items-start gap-4">
+                    <div class="flex h-12 w-12 flex-none items-center justify-center rounded-lg bg-sky-500 text-white"><i class="fas fa-ruler-combined"></i></div>
+                    <div>
+                        <p class="text-sm font-medium text-sky-400">计费重量</p>
+                        <h3 class="mt-1 text-xl font-semibold text-dark-text-primary">空运为什么会看体积重量？</h3>
+                    </div>
+                </div>
+                <p class="mt-4 text-dark-text-secondary leading-7">
+                    空运舱位同时受重量和空间限制影响。泡货虽然实际重量轻，但占用空间大，因此航空公司通常会按实际重量和体积重量中的较高者计费。询价时提供单件尺寸、件数和毛重，可以提前判断计费重量，避免只按实际重量估算导致报价偏差。
+                </p>
+            </article>
+
+            <article class="bg-dark-card rounded-xl shadow-lg p-6 border border-dark-border">
+                <div class="flex items-start gap-4">
+                    <div class="flex h-12 w-12 flex-none items-center justify-center rounded-lg bg-sky-500 text-white"><i class="fas fa-triangle-exclamation"></i></div>
+                    <div>
+                        <p class="text-sm font-medium text-sky-400">特殊货物</p>
+                        <h3 class="mt-1 text-xl font-semibold text-dark-text-primary">带电、液体、粉末或品牌货可以直接发吗？</h3>
+                    </div>
+                </div>
+                <p class="mt-4 text-dark-text-secondary leading-7">
+                    这类货物通常需要先确认具体品名、成分、用途、包装、品牌授权和运输鉴定资料。带电产品可能涉及电池类型和功率，液体粉末可能涉及成分和安全资料，品牌货可能涉及授权或知识产权风险。不能简单按普货处理，应在报价前先说明清楚，避免订舱后被拒收或查验。
+                </p>
+            </article>
+
+            <article class="bg-dark-card rounded-xl shadow-lg p-6 border border-dark-border">
+                <div class="flex items-start gap-4">
+                    <div class="flex h-12 w-12 flex-none items-center justify-center rounded-lg bg-sky-500 text-white"><i class="fas fa-anchor"></i></div>
+                    <div>
+                        <p class="text-sm font-medium text-sky-400">目的港费用</p>
+                        <h3 class="mt-1 text-xl font-semibold text-dark-text-primary">为什么目的港费用可能和预期不一样？</h3>
+                    </div>
+                </div>
+                <p class="mt-4 text-dark-text-secondary leading-7">
+                    目的港费用受港口、船公司、清关方式、查验、仓租、柜租、派送距离和当地代理标准影响。有些费用在起运地报价时只能按常规情况预估，实际到港后会根据当地账单确认。询价时应明确贸易条款和服务范围，区分只到港、到门、含清关或不含清关，避免理解偏差。
+                </p>
+            </article>
+
+            <article class="bg-dark-card rounded-xl shadow-lg p-6 border border-dark-border">
+                <div class="flex items-start gap-4">
+                    <div class="flex h-12 w-12 flex-none items-center justify-center rounded-lg bg-sky-500 text-white"><i class="fas fa-comments"></i></div>
+                    <div>
+                        <p class="text-sm font-medium text-sky-400">询价流程</p>
+                        <h3 class="mt-1 text-xl font-semibold text-dark-text-primary">提交询价后通常会怎么沟通下一步？</h3>
+                    </div>
+                </div>
+                <p class="mt-4 text-dark-text-secondary leading-7">
+                    我们会先确认货物资料、起运地、目的地、时效要求和服务范围，再判断适合的运输方式。如果信息不足，会优先补充影响报价的关键资料，例如体积重量、贸易条款、是否需要报关或派送。资料确认后，再给出报价方向、预计时效和后续操作建议。
+                </p>
+            </article>
+        </section>
+
+        <section class="mt-14 bg-sky-900/20 border border-sky-500/20 rounded-2xl p-8 md:p-10 text-center shadow-lg">
+            <h2 class="text-2xl font-bold text-sky-400 sm:text-3xl">看完仍不确定怎么选？</h2>
+            <p class="mt-4 max-w-3xl mx-auto text-base sm:text-lg text-dark-text-secondary">
+                把货物类型、起运地、目的地、重量体积和时效要求发给我们，我们会结合实际业务情况帮您判断运输方式、资料准备和报价方向。
+            </p>
+            <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="inquiry.html" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-sky-600 hover:bg-sky-700">
+                    <i class="fas fa-paper-plane mr-2"></i> 立即询价
+                </a>
+                <a href="contact.html" class="inline-flex items-center justify-center px-8 py-3 border border-sky-400 text-base font-medium rounded-md text-sky-400 hover:bg-sky-800 hover:text-sky-300">
+                    <i class="fas fa-phone-alt mr-2"></i> 联系我们
+                </a>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -298,8 +253,8 @@
                     <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">关于我们</h3>
                     <ul role="list" class="mt-4 space-y-4">
                         <li><a href="about.html#company-profile" class="text-base text-dark-text-secondary hover:text-dark-text-primary">公司简介</a></li>
-                        <li><a href="about.html#our-mission" class="text-base text-dark-text-secondary hover:text-dark-text-primary">企业文化</a></li>
-                        <li><a href="about.html#milestones" class="text-base text-dark-text-secondary hover:text-dark-text-primary">发展历程</a></li>
+                        <li><a href="about.html#service-advantages" class="text-base text-dark-text-secondary hover:text-dark-text-primary">服务优势</a></li>
+                        <li><a href="contact.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">联系我们</a></li>
                     </ul>
                 </div>
                 <div>
@@ -316,7 +271,7 @@
                     <ul role="list" class="mt-4 space-y-4">
                         <li><a href="tracking.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">货物追踪</a></li>
                         <li><a href="inquiry.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">在线询价</a></li>
-                        <li><a href="news.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">新闻中心</a></li>
+                        <li><a href="news.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">物流知识</a></li>
                     </ul>
                 </div>
                 <div>
@@ -327,8 +282,8 @@
                         <li class="text-base text-dark-text-secondary"><i class="fas fa-envelope mr-2 text-sky-400"></i> MichaelZhang@szshiplink.com</li>
                     </ul>
                     <div class="mt-6 flex space-x-6">
-                        <a href="#" class="text-gray-400 hover:text-gray-300"><span class="sr-only">微信公众号</span><i class="fab fa-weixin fa-lg"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-gray-300"><span class="sr-only">LinkedIn</span><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="contact.html" class="text-gray-400 hover:text-gray-300"><span class="sr-only">微信公众号</span><i class="fab fa-weixin fa-lg"></i></a>
+                        <a href="contact.html" class="text-gray-400 hover:text-gray-300"><span class="sr-only">LinkedIn</span><i class="fab fa-linkedin fa-lg"></i></a>
                     </div>
                 </div>
             </div>
@@ -337,7 +292,7 @@
                     &copy; <span data-current-year></span> 厦普林克国际物流 (深圳) 有限公司. All rights reserved.
                 </p>
                 <p class="mt-4 text-xs text-gray-500 md:mt-0 md:order-2">
-                    原型设计与实现 by AI Agent. 图片来源: Unsplash, Pexels.
+                    专注国际海运、空运、拖车、报关与外贸物流询价服务。
                 </p>
             </div>
         </div>
