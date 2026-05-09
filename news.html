@@ -42,7 +42,7 @@
 </head>
 <body class="bg-dark-bg text-dark-text-primary font-sans">
 
-    <!-- Navigation Bar (same as home.html) -->
+    <!-- Navigation Bar -->
     <nav class="bg-dark-card shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
@@ -290,7 +290,7 @@
 
     </main>
 
-    <!-- Footer (same as home.html) -->
+    <!-- Footer -->
     <footer class="bg-dark-card border-t border-dark-border mt-12">
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -334,7 +334,7 @@
             </div>
             <div class="mt-8 border-t border-dark-border pt-8 md:flex md:items-center md:justify-between">
                 <p class="text-base text-dark-text-secondary md:mt-0 md:order-1">
-                    &copy; ${new Date().getFullYear()} 厦普林克国际物流 (深圳) 有限公司. All rights reserved.
+                    &copy; <span data-current-year></span> 厦普林克国际物流 (深圳) 有限公司. All rights reserved.
                 </p>
                 <p class="mt-4 text-xs text-gray-500 md:mt-0 md:order-2">
                     原型设计与实现 by AI Agent. 图片来源: Unsplash, Pexels.
@@ -342,27 +342,6 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButtonNews = document.querySelector('[aria-controls="mobile-menu-news"]');
-        const mobileMenuNews = document.getElementById('mobile-menu-news');
-        if (mobileMenuButtonNews && mobileMenuNews) {
-            mobileMenuButtonNews.addEventListener('click', () => {
-                const isExpanded = mobileMenuButtonNews.getAttribute('aria-expanded') === 'true' || false;
-                mobileMenuButtonNews.setAttribute('aria-expanded', !isExpanded);
-                mobileMenuNews.classList.toggle('hidden');
-                const icon = mobileMenuButtonNews.querySelector('i');
-                if (icon) {
-                    icon.classList.toggle('fa-bars');
-                    icon.classList.toggle('fa-times');
-                }
-            });
-        }
-
-        // Placeholder for news detail page link (actual navigation would be to a separate detail page)
-        // For this prototype, clicking a news card will link to news-detail-example.html
-        // In a real application, you would generate unique detail pages or use a template engine.
-    </script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

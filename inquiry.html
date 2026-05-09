@@ -35,7 +35,7 @@
 </head>
 <body class="bg-dark-bg text-dark-text-primary font-sans">
 
-    <!-- Navigation Bar (same as home.html) -->
+    <!-- Navigation Bar -->
     <nav class="bg-dark-card shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
@@ -208,7 +208,7 @@
 
     </main>
 
-    <!-- Footer (same as home.html) -->
+    <!-- Footer -->
     <footer class="bg-dark-card border-t border-dark-border mt-12">
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -252,7 +252,7 @@
             </div>
             <div class="mt-8 border-t border-dark-border pt-8 md:flex md:items-center md:justify-between">
                 <p class="text-base text-dark-text-secondary md:mt-0 md:order-1">
-                    &copy; ${new Date().getFullYear()} 厦普林克国际物流 (深圳) 有限公司. All rights reserved.
+                    &copy; <span data-current-year></span> 厦普林克国际物流 (深圳) 有限公司. All rights reserved.
                 </p>
                 <p class="mt-4 text-xs text-gray-500 md:mt-0 md:order-2">
                     原型设计与实现 by AI Agent. 图片来源: Unsplash, Pexels.
@@ -260,135 +260,6 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButtonInquiry = document.querySelector('[aria-controls="mobile-menu-inquiry"]');
-        const mobileMenuInquiry = document.getElementById('mobile-menu-inquiry');
-        if (mobileMenuButtonInquiry && mobileMenuInquiry) {
-            mobileMenuButtonInquiry.addEventListener('click', () => {
-                const isExpanded = mobileMenuButtonInquiry.getAttribute('aria-expanded') === 'true' || false;
-                mobileMenuButtonInquiry.setAttribute('aria-expanded', !isExpanded);
-                mobileMenuInquiry.classList.toggle('hidden');
-                const icon = mobileMenuButtonInquiry.querySelector('i');
-                if (icon) {
-                    icon.classList.toggle('fa-bars');
-                    icon.classList.toggle('fa-times');
-                }
-            });
-        }
-
-        // Inquiry form submission simulation
-        const inquiryForm = document.getElementById('inquiryForm');
-        const inquiryFormSection = document.getElementById('inquiry-form-section');
-        const inquirySuccessSection = document.getElementById('inquiry-success-section');
-        const inquiryErrorSection = document.getElementById('inquiry-error-section');
-        const inquiryErrorMessage = document.getElementById('inquiryErrorMessage');
-        const newInquiryBtn = document.getElementById('newInquiryBtn');
-        const inquiryRefNo = document.getElementById('inquiryRefNo');
-
-        if (inquiryForm) {
-            inquiryForm.addEventListener('submit', function(event) {
-                event.preventDefault();
-
-                // Basic client-side validation (Tailwind uses browser's default for required)
-                let isValid = true;
-                inquiryForm.querySelectorAll('[required]').forEach(input => {
-                    if (!input.value.trim() && input.type !== 'checkbox') {
-                        isValid = false;
-                        input.classList.add('border-red-500');
-                    } else if (input.type === 'checkbox' && !input.checked) {
-                        isValid = false;
-                        // You might want to highlight the checkbox or its label
-                    } else {
-                        input.classList.remove('border-red-500');
-                    }
-                });
-
-                if (!isValid) {
-                    inquiryErrorMessage.textContent = '请填写所有必填项并同意服务条款。';
-                    inquiryErrorSection.classList.remove('hidden');
-                    inquirySuccessSection.classList.add('hidden');
-                    // Scroll to first invalid field (optional)
-                    const firstInvalid = inquiryForm.querySelector('.border-red-500, input[type="checkbox"]:invalid');
-                    if(firstInvalid) firstInvalid.focus();
-                    return;
-                }
-
-                // Get form data
-                const formData = new FormData(inquiryForm);
-                // Convert FormData to a plain object or URLSearchParams if needed by Formspree,
-                // but fetch with FormData usually works directly.
-
-                // Simulate form submission -> Send data to Formspree
-                console.log('Sending inquiry submission to Formspree...');
-
-                fetch(inquiryForm.action, {
-                    method: inquiryForm.method,
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json' // Recommended by Formspree for AJAX submissions
-                    }
-                })
-                .then(response => {
-                    if (response.ok) { // Formspree returns 200 for success
-                        console.log('Inquiry submitted successfully to Formspree.');
-                        inquiryFormSection.classList.add('hidden');
-                        inquiryErrorSection.classList.add('hidden');
-                        inquirySuccessSection.classList.remove('hidden');
-                        // Generate a simple reference number (for display only, Formspree doesn't provide one this way)
-                        if(inquiryRefNo) inquiryRefNo.textContent = 'INQ-' + Date.now().toString().slice(-6);
-                        window.scrollTo(0, inquirySuccessSection.offsetTop - 100); // Scroll to success message
-                        inquiryForm.reset(); // Reset form after successful submission
-                        // Reset red borders after reset
-                         inquiryForm.querySelectorAll('.border-red-500').forEach(el => el.classList.remove('border-red-500'));
-
-                    } else { // Handle errors (e.g., 400 Bad Request, 429 Too Many Requests)
-                         response.json().then(data => {
-                            console.error('Formspree submission error:', data);
-                            let errorMessage = '提交询价时发生错误。请稍后重试。';
-                            if (data && data.errors) {
-                                errorMessage = data.errors.map(error => error.field + ': ' + error.message).join(', ');
-                            } else if (data && data.error) {
-                                errorMessage = data.error;
-                            }
-                            inquiryErrorMessage.textContent = '提交失败: ' + errorMessage;
-                            inquiryFormSection.classList.add('hidden');
-                            inquirySuccessSection.classList.add('hidden');
-                            inquiryErrorSection.classList.remove('hidden');
-                            window.scrollTo(0, inquiryErrorSection.offsetTop - 100); // Scroll to error message
-                        }).catch(() => {
-                            console.error('Formspree submission error: Unable to parse error response.');
-                             inquiryErrorMessage.textContent = '提交失败: 发生未知错误。';
-                             inquiryFormSection.classList.add('hidden');
-                             inquirySuccessSection.classList.add('hidden');
-                             inquiryErrorSection.classList.remove('hidden');
-                             window.scrollTo(0, inquiryErrorSection.offsetTop - 100); // Scroll to error message
-                        });
-                    }
-                })
-                .catch(error => {
-                    console.error('Fetch error during inquiry submission:', error);
-                    inquiryErrorMessage.textContent = '提交失败: 网络或服务器连接错误。';
-                    inquiryFormSection.classList.add('hidden');
-                    inquirySuccessSection.classList.add('hidden');
-                    inquiryErrorSection.classList.remove('hidden');
-                     window.scrollTo(0, inquiryErrorSection.offsetTop - 100); // Scroll to error message
-                });
-            });
-        }
-
-        if (newInquiryBtn) {
-            newInquiryBtn.addEventListener('click', () => {
-                inquirySuccessSection.classList.add('hidden');
-                inquiryErrorSection.classList.add('hidden');
-                inquiryFormSection.classList.remove('hidden');
-                if (inquiryForm) inquiryForm.reset();
-                // Reset red borders if any
-                inquiryForm.querySelectorAll('.border-red-500').forEach(el => el.classList.remove('border-red-500'));
-            });
-        }
-
-    </script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

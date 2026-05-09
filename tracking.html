@@ -59,7 +59,7 @@
 </head>
 <body class="bg-dark-bg text-dark-text-primary font-sans">
 
-    <!-- Navigation Bar (same as home.html) -->
+    <!-- Navigation Bar -->
     <nav class="bg-dark-card shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
@@ -230,7 +230,7 @@
 
     </main>
 
-    <!-- Footer (same as home.html) -->
+    <!-- Footer -->
     <footer class="bg-dark-card border-t border-dark-border mt-12">
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -274,7 +274,7 @@
             </div>
             <div class="mt-8 border-t border-dark-border pt-8 md:flex md:items-center md:justify-between">
                 <p class="text-base text-dark-text-secondary md:mt-0 md:order-1">
-                    &copy; ${new Date().getFullYear()} 厦普林克国际物流 (深圳) 有限公司. All rights reserved.
+                    &copy; <span data-current-year></span> 厦普林克国际物流 (深圳) 有限公司. All rights reserved.
                 </p>
                 <p class="mt-4 text-xs text-gray-500 md:mt-0 md:order-2">
                     原型设计与实现 by AI Agent. 图片来源: Unsplash, Pexels.
@@ -284,22 +284,6 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuButtonTracking = document.querySelector('[aria-controls="mobile-menu-tracking"]');
-        const mobileMenuTracking = document.getElementById('mobile-menu-tracking');
-        if(mobileMenuButtonTracking && mobileMenuTracking) {
-            mobileMenuButtonTracking.addEventListener('click', () => {
-                const isExpanded = mobileMenuButtonTracking.getAttribute('aria-expanded') === 'true' || false;
-                mobileMenuButtonTracking.setAttribute('aria-expanded', !isExpanded);
-                mobileMenuTracking.classList.toggle('hidden');
-                const icon = mobileMenuButtonTracking.querySelector('i');
-                if (icon) {
-                    icon.classList.toggle('fa-bars');
-                    icon.classList.toggle('fa-times');
-                }
-            });
-        }
-
         // Tracking form submission simulation
         const trackingForm = document.getElementById('trackingForm');
         const trackingFormSection = document.getElementById('tracking-form-section');
@@ -353,5 +337,6 @@
         }
 
     </script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
