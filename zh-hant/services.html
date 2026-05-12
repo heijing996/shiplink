@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="廈普林克國際物流提供國際海運、國際空運、拖車陸運、報關服務、倉儲配送和跨境小批量物流服務。">
+    <title>服務中心 - 廈普林克國際物流</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="alternate" hreflang="zh-CN" href="../services.html">
+    <link rel="alternate" hreflang="en" href="../en/services.html">
+    <link rel="alternate" hreflang="zh-Hant" href="services.html">
+    <link rel="alternate" hreflang="x-default" href="../en/services.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#0052CC',
+                        'dark-bg': '#0F172A',
+                        'dark-card': '#1E293B',
+                        'dark-border': '#334155',
+                        'dark-text-primary': '#E2E8F0',
+                        'dark-text-secondary': '#94A3B8',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .service-header-bg {
+            /* 圖片來源: https://unsplash.com/photos/aerial-view-of-cargo-ship-on-sea-during-daytime-oGmf8o5CRXg */
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .service-card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-dark-text-primary font-sans">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-dark-card shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0">
+                        <img class="h-10 w-auto" src="../assets/images/companylogo.jpg" alt="廈普林克國際物流Logo">
+                    </a>
+                    <span class="ml-3 text-xl font-semibold text-sky-400">廈普林克國際物流</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">首頁</a>
+                        <a href="about.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">關於我們</a>
+                        <a href="services.html" class="bg-dark-bg text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">服務中心</a>
+                        <a href="news.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">物流知識</a>
+                        <a href="tracking.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">貨物查詢</a>
+                        <a href="inquiry.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">線上詢價</a>
+                        <a href="contact.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">聯絡我們</a>
+                        <div class="flex items-center gap-2 border-l border-dark-border pl-4 ml-2" aria-label="語言切換">
+                            <a href="services.html" class="text-white bg-sky-700 px-2 py-1 rounded text-xs font-semibold" >简</a>
+                            <a href="services.html" class="text-white bg-sky-700 px-2 py-1 rounded text-xs font-semibold" aria-current="true">繁</a>
+                            <a href="../en/services.html" class="text-dark-text-secondary hover:text-white px-2 py-1 rounded text-xs font-semibold">EN</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="bg-dark-card inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu-services" aria-expanded="false">
+                        <span class="sr-only">開啟主選單</span>
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu-services">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">首頁</a>
+                <a href="about.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">關於我們</a>
+                <a href="services.html" class="bg-dark-bg text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">服務中心</a>
+                <a href="news.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">物流知識</a>
+                <a href="tracking.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">貨物查詢</a>
+                <a href="inquiry.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">線上詢價</a>
+                <a href="contact.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">聯絡我們</a>
+                <div class="mt-3 border-t border-dark-border pt-3" aria-label="行動版語言切換">
+                    <p class="px-3 pb-2 text-xs font-semibold uppercase tracking-wide text-dark-text-secondary">Language</p>
+                    <a href="services.html" class="bg-sky-700 text-white inline-block mx-1 px-3 py-2 rounded-md text-sm font-medium" >简体中文</a>
+                    <a href="services.html" class="bg-sky-700 text-white inline-block mx-1 px-3 py-2 rounded-md text-sm font-medium" aria-current="true">繁體中文</a>
+                    <a href="../en/services.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white inline-block mx-1 px-3 py-2 rounded-md text-sm font-medium">English</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="service-header-bg">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">我們的服務</h1>
+            <p class="mt-6 max-w-3xl mx-auto text-xl text-gray-300">
+                中國發全球，重點提供海運、空運、拖車、報關、倉儲配送和目的地派送服務。資料不全也可以先詢價。
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Service Card: International Sea Freight -->
+            <div id="sea-freight" class="bg-dark-card rounded-xl shadow-2xl overflow-hidden service-card-hover">
+                <!-- 圖片來源: https://www.pexels.com/photo/aerial-view-of-cargo-ship-on-sea-3840441/ -->
+                <img class="w-full h-56 object-cover" loading="lazy" decoding="async" src="https://images.pexels.com/photos/3840441/pexels-photo-3840441.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="國際海運">
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-ship fa-2x text-sky-400 mr-3"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text-primary">國際海運</h3>
+                    </div>
+                    <p class="text-dark-text-secondary mb-4">
+                        適合大批量、成本敏感或交期較宽的貨物。支持整櫃 FCL、拼箱 LCL、港到港、門到門等方案，先根據貨量和目的地判斷報價方向。
+                    </p>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-1 mb-4 text-sm">
+                        <li>中國主要港口發全球主要港口</li>
+                        <li>整櫃、拼箱、常規貨物出運</li>
+                        <li>港到港、門到門可詢價</li>
+                        <li>可配合拖車、報關、倉儲</li>
+                    </ul>
+                    <a href="inquiry.html?service=sea-freight" class="inline-block bg-sky-500 text-white px-5 py-2 rounded-md hover:bg-sky-600 transition-colors text-sm font-medium">索取海運報價</a>
+                </div>
+            </div>
+
+            <!-- Service Card: International Air Freight -->
+            <div id="air-freight" class="bg-dark-card rounded-xl shadow-2xl overflow-hidden service-card-hover">
+                <!-- 圖片來源: https://www.pexels.com/photo/white-airplane-on-airport-358319/ -->
+                <img class="w-full h-56 object-cover" loading="lazy" decoding="async" src="https://images.pexels.com/photos/358319/pexels-photo-358319.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="國際空運">
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-plane-departure fa-2x text-sky-400 mr-3"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text-primary">國際空運</h3>
+                    </div>
+                    <p class="text-dark-text-secondary mb-4">
+                        適合時效紧、货值高、批量較小或臨時補貨的貨物。提供機場到機場、門到門等空運報價建議。
+                    </p>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-1 mb-4 text-sm">
+                        <li>中國主要機場發全球主要機場</li>
+                        <li>可按時效和預算選擇航班</li>
+                        <li>帶電、特殊貨物需先確認資料</li>
+                        <li>機場到機場、門到門可詢價</li>
+                    </ul>
+                    <a href="inquiry.html?service=air-freight" class="inline-block bg-sky-500 text-white px-5 py-2 rounded-md hover:bg-sky-600 transition-colors text-sm font-medium">索取空運報價</a>
+                </div>
+            </div>
+
+            <!-- Service Card: Land Transport -->
+            <div id="land-transport" class="bg-dark-card rounded-xl shadow-2xl overflow-hidden service-card-hover">
+                <!-- 圖片來源: https://www.pexels.com/photo/truck-on-a-highway-6170358/ -->
+                <img class="w-full h-56 object-cover" loading="lazy" decoding="async" src="https://images.pexels.com/photos/6170358/pexels-photo-6170358.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="拖車 / 陸運">
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-truck fa-2x text-sky-400 mr-3"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text-primary">拖車 / 陸運</h3>
+                    </div>
+                    <p class="text-dark-text-secondary mb-4">
+                        提供工廠提貨、港口拖車、中港運輸、目的地派送等陸運配套服務，適合和海運、空運、報關一起安排。
+                    </p>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-1 mb-4 text-sm">
+                        <li>工廠提貨、港口拖車</li>
+                        <li>中港運輸、內陸轉運</li>
+                        <li>整車、零擔可諮詢</li>
+                        <li>可配合倉儲和報關安排</li>
+                    </ul>
+                    <a href="inquiry.html?service=land-transport" class="inline-block bg-sky-500 text-white px-5 py-2 rounded-md hover:bg-sky-600 transition-colors text-sm font-medium">諮詢拖車 / 陸運</a>
+                </div>
+            </div>
+
+            <!-- Service Card: Warehousing & Distribution -->
+            <div id="warehousing" class="bg-dark-card rounded-xl shadow-2xl overflow-hidden service-card-hover">
+                <!-- 圖片來源: https://www.pexels.com/photo/view-of-a-warehouse-7675003/ -->
+                <img class="w-full h-56 object-cover" loading="lazy" decoding="async" src="https://images.pexels.com/photos/7675003/pexels-photo-7675003.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="倉儲與配送">
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-warehouse fa-2x text-sky-400 mr-3"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text-primary">倉儲與配送</h3>
+                    </div>
+                    <p class="text-dark-text-secondary mb-4">
+                        如果貨物需要臨時存放、分批出運、重新包裝或等待订舱，可以先諮詢倉儲和配送安排。
+                    </p>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-1 mb-4 text-sm">
+                        <li>臨時倉儲、分批出運</li>
+                        <li>裝卸、分揀、貼標</li>
+                        <li>打托、加固、包裝協助</li>
+                        <li>配送和轉運安排</li>
+                    </ul>
+                    <a href="inquiry.html?service=warehousing" class="inline-block bg-sky-500 text-white px-5 py-2 rounded-md hover:bg-sky-600 transition-colors text-sm font-medium">諮詢倉儲配送</a>
+                </div>
+            </div>
+
+            <!-- Service Card: Customs Brokerage -->
+            <div id="customs-brokerage" class="bg-dark-card rounded-xl shadow-2xl overflow-hidden service-card-hover">
+                <!-- 圖片來源: https://www.pexels.com/photo/people-working-in-an-office-3184306/ (示意海關文件處理) -->
+                <img class="w-full h-56 object-cover" loading="lazy" decoding="async" src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="報關服務">
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-file-invoice fa-2x text-sky-400 mr-3"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text-primary">報關服務</h3>
+                    </div>
+                    <p class="text-dark-text-secondary mb-4">
+                        出口前可先確認報關資料、申報要素、發票、裝箱單和品名信息，減少臨近截關才發現資料不全的风险。
+                    </p>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-1 mb-4 text-sm">
+                        <li>出口報關資料確認</li>
+                        <li>申報要素和品名核對</li>
+                        <li>發票、裝箱單、合同資料提醒</li>
+                        <li>特殊貨物提前確認</li>
+                    </ul>
+                    <a href="inquiry.html?service=customs" class="inline-block bg-sky-500 text-white px-5 py-2 rounded-md hover:bg-sky-600 transition-colors text-sm font-medium">諮詢報關服務</a>
+                </div>
+            </div>
+
+            <!-- Service Card: E-commerce Logistics -->
+            <div id="ecommerce-logistics" class="bg-dark-card rounded-xl shadow-2xl overflow-hidden service-card-hover">
+                <!-- 圖片來源: https://www.pexels.com/photo/person-holding-a-smartphone-and-a-credit-card-4386433/ (示意電商購物) -->
+                <img class="w-full h-56 object-cover" loading="lazy" decoding="async" src="https://images.pexels.com/photos/4386433/pexels-photo-4386433.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="小批量 / 跨境物流">
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-shopping-cart fa-2x text-sky-400 mr-3"></i>
+                        <h3 class="text-2xl font-semibold text-dark-text-primary">小批量 / 跨境物流</h3>
+                    </div>
+                    <p class="text-dark-text-secondary mb-4">
+                        適合樣品、小批量補貨、外貿客戶臨時發貨等場景。可根據貨物重量、體積和時效要求判斷空運、快遞或專線方向。
+                    </p>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-1 mb-4 text-sm">
+                        <li>樣品、小批量貨物可詢價</li>
+                        <li>可按時效選擇運輸方式</li>
+                        <li>可諮詢到門派送</li>
+                        <li>特殊貨物先確認限制</li>
+                    </ul>
+                    <a href="inquiry.html?service=ecommerce-logistics" class="inline-block bg-sky-500 text-white px-5 py-2 rounded-md hover:bg-sky-600 transition-colors text-sm font-medium">小批量詢價</a>
+                </div>
+            </div>
+
+            <!-- Service Card: Supply Chain Solutions -->
+            <div id="supply-chain" class="bg-dark-card rounded-xl shadow-2xl overflow-hidden service-card-hover lg:col-span-3 md:col-span-2">
+                 <!-- 圖片來源: https://www.pexels.com/photo/network-of-connected-dots-and-lines-57007/ -->
+                <img class="w-full h-64 object-cover" loading="lazy" decoding="async" src="https://images.pexels.com/photos/57007/pexels-photo-57007.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="一票貨出運方案">
+                <div class="p-8">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-cogs fa-2x text-sky-400 mr-4"></i>
+                        <h3 class="text-3xl font-semibold text-dark-text-primary">一票貨出運方案</h3>
+                    </div>
+                    <p class="text-dark-text-secondary mb-6 text-lg">
+                        不知道該走海運還是空運？不知道需要哪些資料？把貨物品名、重量體積、起運地、目的地和預計出货时间發給我們，我們先幫您判斷運輸方式、報價資料和後續操作步驟。
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <h4 class="text-xl font-medium text-sky-300 mb-2">適合這些情況：</h4>
+                            <ul class="list-disc list-inside text-dark-text-secondary space-y-1">
+                                <li>第一次發貨，不知道怎麼詢價</li>
+                                <li>資料不全，需要先判斷方向</li>
+                                <li>想比較海運、空運和到門成本</li>
+                                <li>需要拖車、報關、倉儲一起安排</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-medium text-sky-300 mb-2">先提供這些信息：</h4>
+                            <ul class="list-disc list-inside text-dark-text-secondary space-y-1">
+                                <li>貨物品名、件數、重量、體積</li>
+                                <li>起運地、目的地、預計出货时间</li>
+                                <li>貿易條款、是否需要報關或派送</li>
+                                <li>時效要求和預算方向</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="contact.html?subject=SupplyChainSolution" class="inline-flex items-center bg-gradient-to-r from-sky-500 to-indigo-600 text-white px-8 py-3 rounded-lg hover:from-sky-600 hover:to-indigo-700 transition-all text-lg font-semibold shadow-lg">
+                        <i class="fas fa-headset mr-2"></i> 先諮詢怎麼发
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action Section -->
+        <section class="py-16 mt-12 bg-dark-card rounded-lg shadow-xl -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-extrabold text-sky-400 sm:text-4xl">有貨要發？先詢價</h2>
+                <p class="mt-4 text-lg text-dark-text-secondary max-w-2xl mx-auto">
+                    把貨物類型、起運地、目的地、重量體積和預計出货时间發給我們。資料不全也可以先提交，我們會盡快幫您判斷怎麼发、怎麼報價。
+                </p>
+                <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="inquiry.html" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-sky-500 hover:bg-sky-600 transition-colors">
+                        <i class="fas fa-calculator mr-2"></i> 線上詢價
+                    </a>
+                    <a href="contact.html" class="inline-flex items-center justify-center px-6 py-3 border border-sky-500 text-base font-medium rounded-md text-sky-400 hover:bg-sky-500 hover:text-white transition-colors">
+                        <i class="fas fa-phone-alt mr-2"></i> 聯絡我們
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-card border-t border-dark-border mt-12">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">關於我們</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="about.html#company-profile" class="text-base text-dark-text-secondary hover:text-dark-text-primary">公司簡介</a></li>
+                        <li><a href="about.html#service-advantages" class="text-base text-dark-text-secondary hover:text-dark-text-primary">服務優勢</a></li>
+                        <li><a href="contact.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">聯絡我們</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">核心服務</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="services.html#sea-freight" class="text-base text-dark-text-secondary hover:text-dark-text-primary">國際海運</a></li>
+                        <li><a href="services.html#air-freight" class="text-base text-dark-text-secondary hover:text-dark-text-primary">國際空運</a></li>
+                        <li><a href="services.html#land-transport" class="text-base text-dark-text-secondary hover:text-dark-text-primary">拖車 / 陸運</a></li>
+                        <li><a href="services.html#ecommerce-logistics" class="text-base text-dark-text-secondary hover:text-dark-text-primary">小批量 / 跨境物流</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">快速連結</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="tracking.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">貨物查詢</a></li>
+                        <li><a href="inquiry.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">線上詢價</a></li>
+                        <li><a href="news.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">物流知識</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">聯絡我們</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-map-marker-alt mr-2 text-sky-400"></i> 深圳市龍華區龍華街道富康社區天匯大廈 C 棟 3 樓 308</li>
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-phone-alt mr-2 text-sky-400"></i> +86 13129567120</li>
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-envelope mr-2 text-sky-400"></i> MichaelZhang@szshiplink.com</li>
+                    </ul>
+                    <p class="text-sm text-dark-text-secondary">微信 / WhatsApp：0086-13129567120</p>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-dark-border pt-8 md:flex md:items-center md:justify-between">
+                <p class="text-base text-dark-text-secondary md:mt-0 md:order-1">
+                    &copy; <span data-current-year></span> 廈普林克國際物流 (深圳) 有限公司. All rights reserved.
+                </p>
+                <p class="mt-4 text-xs text-gray-500 md:mt-0 md:order-2">
+                    專注國際海運、空運、拖車、報關與外貿物流詢價服務。
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

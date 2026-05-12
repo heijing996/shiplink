@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="貨物狀態人工查詢入口。目前网站未接入船司、航司或第三方即時追蹤接口，請聯絡人工客服核实貨物狀態。">
+    <title>貨物狀態查詢 - 廈普林克國際物流</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="alternate" hreflang="zh-CN" href="../tracking.html">
+    <link rel="alternate" hreflang="en" href="../en/tracking.html">
+    <link rel="alternate" hreflang="zh-Hant" href="tracking.html">
+    <link rel="alternate" hreflang="x-default" href="../en/tracking.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#0052CC',
+                        'dark-bg': '#0F172A',
+                        'dark-card': '#1E293B',
+                        'dark-border': '#334155',
+                        'dark-text-primary': '#E2E8F0',
+                        'dark-text-secondary': '#94A3B8',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .tracking-header-bg {
+            /* 圖片來源: https://unsplash.com/photos/aerial-view-of-cargo-ship-on-sea-during-daytime-oGmf8K538gA */
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1605745341509-8711319615a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-dark-text-primary font-sans">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-dark-card shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0">
+                        <img class="h-10 w-auto" src="../assets/images/companylogo.jpg" alt="廈普林克國際物流Logo">
+                    </a>
+                    <span class="ml-3 text-xl font-semibold text-sky-400">廈普林克國際物流</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">首頁</a>
+                        <a href="about.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">關於我們</a>
+                        <a href="services.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">服務中心</a>
+                        <a href="news.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">物流知識</a>
+                        <a href="tracking.html" class="bg-dark-bg text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">貨物查詢</a>
+                        <a href="inquiry.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">線上詢價</a>
+                        <a href="contact.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">聯絡我們</a>
+                        <div class="flex items-center gap-2 border-l border-dark-border pl-4 ml-2" aria-label="語言切換">
+                            <a href="tracking.html" class="text-white bg-sky-700 px-2 py-1 rounded text-xs font-semibold" >简</a>
+                            <a href="tracking.html" class="text-white bg-sky-700 px-2 py-1 rounded text-xs font-semibold" aria-current="true">繁</a>
+                            <a href="../en/tracking.html" class="text-dark-text-secondary hover:text-white px-2 py-1 rounded text-xs font-semibold">EN</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="bg-dark-card inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu-tracking" aria-expanded="false">
+                        <span class="sr-only">開啟主選單</span>
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu-tracking">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">首頁</a>
+                <a href="about.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">關於我們</a>
+                <a href="services.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">服務中心</a>
+                <a href="news.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">物流知識</a>
+                <a href="tracking.html" class="bg-dark-bg text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">貨物查詢</a>
+                <a href="inquiry.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">線上詢價</a>
+                <a href="contact.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">聯絡我們</a>
+                <div class="mt-3 border-t border-dark-border pt-3" aria-label="行動版語言切換">
+                    <p class="px-3 pb-2 text-xs font-semibold uppercase tracking-wide text-dark-text-secondary">Language</p>
+                    <a href="tracking.html" class="bg-sky-700 text-white inline-block mx-1 px-3 py-2 rounded-md text-sm font-medium" >简体中文</a>
+                    <a href="tracking.html" class="bg-sky-700 text-white inline-block mx-1 px-3 py-2 rounded-md text-sm font-medium" aria-current="true">繁體中文</a>
+                    <a href="../en/tracking.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white inline-block mx-1 px-3 py-2 rounded-md text-sm font-medium">English</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="tracking-header-bg">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">貨物狀態查詢</h1>
+            <p class="mt-6 max-w-3xl mx-auto text-xl text-gray-300">
+                如需查詢貨物狀態，請透過電話、微信、WhatsApp 或郵箱聯絡專人核实。頁面僅提供人工查詢入口說明，不代表即時軌跡系統。
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        
+        <!-- Tracking Input Form -->
+        <section id="tracking-form-section" class="bg-dark-card shadow-xl rounded-lg p-6 sm:p-8 md:p-10">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-dark-text-primary mb-6 text-center">輸入您的追踪號碼</h2>
+            <div class="mb-6 rounded-lg border border-yellow-500/40 bg-yellow-500/10 p-4 text-sm text-yellow-100">
+                <i class="fas fa-exclamation-triangle mr-2 text-yellow-400"></i>
+                目前网站未接入船司、航司或第三方即時追蹤接口。請透過電話、微信、WhatsApp 或郵箱聯絡客服人工核实貨物狀態。
+            </div>
+            <form id="trackingForm" class="space-y-6">
+                <div>
+                    <label for="trackingNumber" class="block text-sm font-medium text-dark-text-secondary mb-1">提單號 / 訂單號 / 箱號</label>
+                    <div class="mt-1 flex rounded-md shadow-sm">
+                        <input type="text" name="trackingNumber" id="trackingNumber" class="flex-1 block w-full rounded-md bg-dark-bg border-dark-border focus:ring-sky-500 focus:border-sky-500 sm:text-sm p-3 text-dark-text-primary placeholder-gray-500" placeholder="請輸入提單號、訂單號或箱號">
+                    </div>
+                    <p class="mt-2 text-xs text-gray-400">填寫后将展示人工查詢說明，真實節點請以客服核实結果為準。</p>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3">
+                    <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-sky-500 hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-bg focus:ring-sky-500 transition-colors">
+                        <i class="fas fa-search mr-2"></i> 查看人工查詢說明
+                    </button>
+                    <a href="contact.html?subject=貨物狀態查詢" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 border border-dark-border text-base font-medium rounded-md shadow-sm text-dark-text-primary bg-dark-bg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-bg focus:ring-sky-500 transition-colors">
+                        <i class="fas fa-headset mr-2"></i> 聯絡人工查詢
+                    </a>
+                </div>
+            </form>
+        </section>
+
+        <!-- Tracking Results Section (Initially Hidden) -->
+        <section id="tracking-results-section" class="mt-12 bg-dark-card shadow-xl rounded-lg p-6 sm:p-8 md:p-10 hidden">
+            <div class="flex justify-between items-center mb-6 pb-4 border-b border-dark-border">
+                <h2 class="text-2xl sm:text-3xl font-semibold text-dark-text-primary">人工查詢說明</h2>
+                <button id="searchAgainBtn" class="text-sm text-sky-400 hover:text-sky-300"><i class="fas fa-redo mr-1"></i> 重新填寫</button>
+            </div>
+            <div class="rounded-lg border border-sky-500/30 bg-sky-500/10 p-5 text-sm text-sky-100">
+                <p class="text-base text-dark-text-primary font-medium">网站未接入即時追蹤接口。請透過電話、微信、WhatsApp 或郵箱聯絡人工客服，并提供提單號、訂單號或箱號以便核实貨物狀態。</p>
+                <p class="mt-3">为便于快速核实，請準備以下信息：</p>
+                <ul class="mt-3 space-y-2 list-disc list-inside text-dark-text-secondary">
+                    <li>提單號 / 訂單號 / 箱號</li>
+                    <li>起運地 / 目的地</li>
+                    <li>聯絡人</li>
+                    <li>電話 / 微信 / WhatsApp</li>
+                </ul>
+                <a href="contact.html?subject=貨物狀態查詢" class="mt-5 inline-flex items-center justify-center rounded-md bg-sky-500 px-5 py-3 text-sm font-medium text-white hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-card focus:ring-sky-500">
+                    <i class="fas fa-headset mr-2"></i> 聯絡人工核實
+                </a>
+            </div>
+        </section>
+        
+        <!-- Error Message Section (Initially Hidden) -->
+        <section id="tracking-error-section" class="mt-12 bg-red-900 bg-opacity-30 border border-red-700 text-red-300 px-4 py-3 rounded-lg relative hidden" role="alert">
+            <strong class="font-bold">資訊不完整</strong>
+            <span class="block sm:inline" id="errorMessage"></span>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-card border-t border-dark-border mt-12">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">關於我們</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="about.html#company-profile" class="text-base text-dark-text-secondary hover:text-dark-text-primary">公司簡介</a></li>
+                        <li><a href="about.html#service-advantages" class="text-base text-dark-text-secondary hover:text-dark-text-primary">服務優勢</a></li>
+                        <li><a href="contact.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">聯絡我們</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">核心服務</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="services.html#sea-freight" class="text-base text-dark-text-secondary hover:text-dark-text-primary">國際海運</a></li>
+                        <li><a href="services.html#air-freight" class="text-base text-dark-text-secondary hover:text-dark-text-primary">國際空運</a></li>
+                        <li><a href="services.html#land-transport" class="text-base text-dark-text-secondary hover:text-dark-text-primary">拖車 / 陸運</a></li>
+                        <li><a href="services.html#ecommerce-logistics" class="text-base text-dark-text-secondary hover:text-dark-text-primary">跨境電商物流</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">快速連結</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="tracking.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">貨物查詢</a></li>
+                        <li><a href="inquiry.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">線上詢價</a></li>
+                        <li><a href="news.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">物流知識</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">聯絡我們</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-map-marker-alt mr-2 text-sky-400"></i> 深圳市龍華區龍華街道富康社區天匯大廈 C 棟 3 樓 308</li>
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-phone-alt mr-2 text-sky-400"></i> +86 13129567120</li>
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-envelope mr-2 text-sky-400"></i> MichaelZhang@szshiplink.com</li>
+                    </ul>
+                    <p class="mt-6 text-sm text-dark-text-secondary">微信 / WhatsApp：0086-13129567120</p>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-dark-border pt-8 md:flex md:items-center md:justify-between">
+                <p class="text-base text-dark-text-secondary md:mt-0 md:order-1">
+                    &copy; <span data-current-year></span> 廈普林克國際物流 (深圳) 有限公司. All rights reserved.
+                </p>
+                <p class="mt-4 text-xs text-gray-500 md:mt-0 md:order-2">
+                    專注國際海運、空運、拖車、報關與外貿物流詢價服務。
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tracking form submission handling
+        const trackingForm = document.getElementById('trackingForm');
+        const trackingFormSection = document.getElementById('tracking-form-section');
+        const trackingNumberInput = document.getElementById('trackingNumber');
+        const trackingResultsSection = document.getElementById('tracking-results-section');
+        const trackingErrorSection = document.getElementById('tracking-error-section');
+        const errorMessage = document.getElementById('errorMessage');
+        const searchAgainBtn = document.getElementById('searchAgainBtn');
+
+        if (trackingForm && trackingNumberInput && trackingResultsSection && trackingErrorSection && errorMessage) {
+            trackingForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const trackingNo = trackingNumberInput.value.trim();
+
+                // Clear previous messages
+                trackingErrorSection.classList.add('hidden');
+                errorMessage.textContent = '';
+
+                if (!trackingNo) {
+                    errorMessage.textContent = '請輸入提單號、訂單號或箱號。';
+                    trackingErrorSection.classList.remove('hidden');
+                    return;
+                }
+
+                if (trackingFormSection) {
+                    trackingFormSection.classList.add('hidden');
+                }
+                trackingResultsSection.classList.remove('hidden');
+            });
+        }
+
+        if (searchAgainBtn && trackingResultsSection && trackingErrorSection) {
+            searchAgainBtn.addEventListener('click', () => {
+                trackingResultsSection.classList.add('hidden');
+                trackingErrorSection.classList.add('hidden');
+                if (trackingFormSection) {
+                    trackingFormSection.classList.remove('hidden');
+                }
+                if (trackingForm) {
+                    trackingForm.reset();
+                }
+            });
+        }
+
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

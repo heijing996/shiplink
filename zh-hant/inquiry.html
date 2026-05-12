@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="提交國際物流詢價需求，提供品名、起運地、目的地、重量體積和時效要求，获取海運、空運、拖車、報關或倉儲配送報價方向。">
+    <title>線上詢價 - 廈普林克國際物流</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="alternate" hreflang="zh-CN" href="../inquiry.html">
+    <link rel="alternate" hreflang="en" href="../en/inquiry.html">
+    <link rel="alternate" hreflang="zh-Hant" href="inquiry.html">
+    <link rel="alternate" hreflang="x-default" href="../en/inquiry.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#0052CC',
+                        'dark-bg': '#0F172A',
+                        'dark-card': '#1E293B',
+                        'dark-border': '#334155',
+                        'dark-text-primary': '#E2E8F0',
+                        'dark-text-secondary': '#94A3B8',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .inquiry-header-bg {
+            /* 圖片來源: https://unsplash.com/photos/a-view-of-a-city-from-the-top-of-a-hill-at-night-DbL_TEm3E0g */
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-dark-text-primary font-sans">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-dark-card shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0">
+                        <img class="h-10 w-auto" src="../assets/images/companylogo.jpg" alt="廈普林克國際物流Logo">
+                    </a>
+                    <span class="ml-3 text-xl font-semibold text-sky-400">廈普林克國際物流</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">首頁</a>
+                        <a href="about.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">關於我們</a>
+                        <a href="services.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">服務中心</a>
+                        <a href="news.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">物流知識</a>
+                        <a href="tracking.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">貨物查詢</a>
+                        <a href="inquiry.html" class="bg-dark-bg text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">線上詢價</a>
+                        <a href="contact.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">聯絡我們</a>
+                        <div class="flex items-center gap-2 border-l border-dark-border pl-4 ml-2" aria-label="語言切換">
+                            <a href="inquiry.html" class="text-white bg-sky-700 px-2 py-1 rounded text-xs font-semibold" >简</a>
+                            <a href="inquiry.html" class="text-white bg-sky-700 px-2 py-1 rounded text-xs font-semibold" aria-current="true">繁</a>
+                            <a href="../en/inquiry.html" class="text-dark-text-secondary hover:text-white px-2 py-1 rounded text-xs font-semibold">EN</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="bg-dark-card inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu-inquiry" aria-expanded="false">
+                        <span class="sr-only">開啟主選單</span>
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu-inquiry">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">首頁</a>
+                <a href="about.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">關於我們</a>
+                <a href="services.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">服務中心</a>
+                <a href="news.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">物流知識</a>
+                <a href="tracking.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">貨物查詢</a>
+                <a href="inquiry.html" class="bg-dark-bg text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">線上詢價</a>
+                <a href="contact.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">聯絡我們</a>
+                <div class="mt-3 border-t border-dark-border pt-3" aria-label="行動版語言切換">
+                    <p class="px-3 pb-2 text-xs font-semibold uppercase tracking-wide text-dark-text-secondary">Language</p>
+                    <a href="inquiry.html" class="bg-sky-700 text-white inline-block mx-1 px-3 py-2 rounded-md text-sm font-medium" >简体中文</a>
+                    <a href="inquiry.html" class="bg-sky-700 text-white inline-block mx-1 px-3 py-2 rounded-md text-sm font-medium" aria-current="true">繁體中文</a>
+                    <a href="../en/inquiry.html" class="text-dark-text-secondary hover:bg-gray-700 hover:text-white inline-block mx-1 px-3 py-2 rounded-md text-sm font-medium">English</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="inquiry-header-bg">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">線上詢價</h1>
+            <p class="mt-6 max-w-3xl mx-auto text-xl text-gray-300">
+                快速获取您的专属物流方案與報價，我們將在24小时内回覆您。
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        
+        <section id="inquiry-form-section" class="bg-dark-card shadow-xl rounded-lg p-6 sm:p-8 md:p-10">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-dark-text-primary mb-8 text-center">填寫詢價信息</h2>
+            <form id="inquiryForm" class="space-y-8" method="POST" action="https://formspree.io/f/mgvkgzvj">
+                <!-- Route Information -->
+                <fieldset>
+                    <legend class="text-lg font-medium text-sky-400 mb-4">1. 路線資訊</legend>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="originPort" class="block text-sm font-medium text-dark-text-secondary">起運港/城市 <span class="text-red-400">*</span></label>
+                            <input type="text" name="originPort" id="originPort" required class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="例如：上海 / Shenzhen">
+                        </div>
+                        <div>
+                            <label for="destinationPort" class="block text-sm font-medium text-dark-text-secondary">目的港/城市 <span class="text-red-400">*</span></label>
+                            <input type="text" name="destinationPort" id="destinationPort" required class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="例如：洛杉矶 / Hamburg">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Cargo Information -->
+                <fieldset>
+                    <legend class="text-lg font-medium text-sky-400 mb-4">2. 貨物資訊</legend>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="cargoType" class="block text-sm font-medium text-dark-text-secondary">貨物名称/類型 <span class="text-red-400">*</span></label>
+                            <input type="text" name="cargoType" id="cargoType" required class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="例如：电子产品 / 服装">
+                        </div>
+                        <div>
+                            <label for="cargoMode" class="block text-sm font-medium text-dark-text-secondary">運輸模式 <span class="text-red-400">*</span></label>
+                            <select id="cargoMode" name="cargoMode" required class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary">
+                                <option value="">請選擇</option>
+                                <option value="FCL">整櫃 (FCL)</option>
+                                <option value="LCL">拼箱 (LCL)</option>
+                                <option value="Air">空運</option>
+                                <option value="Land">陸運</option>
+                                <option value="Multimodal">多式联运</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                        <div>
+                            <label for="cargoWeight" class="block text-sm font-medium text-dark-text-secondary">總重量 (KG) <span class="text-red-400">*</span></label>
+                            <input type="number" name="cargoWeight" id="cargoWeight" required min="0" step="0.01" class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="例如：1500">
+                        </div>
+                        <div>
+                            <label for="cargoVolume" class="block text-sm font-medium text-dark-text-secondary">總體積 (CBM)</label>
+                            <input type="number" name="cargoVolume" id="cargoVolume" min="0" step="0.01" class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="例如：2.5">
+                        </div>
+                        <div>
+                            <label for="cargoQuantity" class="block text-sm font-medium text-dark-text-secondary">件數</label>
+                            <input type="number" name="cargoQuantity" id="cargoQuantity" min="1" step="1" class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="例如：100">
+                        </div>
+                    </div>
+                     <div class="mt-6">
+                        <label for="cargoRemarks" class="block text-sm font-medium text-dark-text-secondary">備註 (如特殊要求、危險品等)</label>
+                        <textarea id="cargoRemarks" name="cargoRemarks" rows="3" class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="請在此处填寫貨物的特殊要求，如是否为危險品、易碎品、溫控需求等。"></textarea>
+                    </div>
+                </fieldset>
+
+                <!-- Contact Information -->
+                <fieldset>
+                    <legend class="text-lg font-medium text-sky-400 mb-4">3. 聯絡方式</legend>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="contactName" class="block text-sm font-medium text-dark-text-secondary">您的姓名 <span class="text-red-400">*</span></label>
+                            <input type="text" name="contactName" id="contactName" required autocomplete="name" class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="例如：张三">
+                        </div>
+                        <div>
+                            <label for="companyName" class="block text-sm font-medium text-dark-text-secondary">公司名稱</label>
+                            <input type="text" name="companyName" id="companyName" autocomplete="organization" class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="例如：ABC貿易有限公司">
+                        </div>
+                        <div>
+                            <label for="contactEmail" class="block text-sm font-medium text-dark-text-secondary">電子郵箱 <span class="text-red-400">*</span></label>
+                            <input type="email" name="contactEmail" id="contactEmail" required autocomplete="email" class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="例如：zhangsan@example.com">
+                        </div>
+                        <div>
+                            <label for="contactPhone" class="block text-sm font-medium text-dark-text-secondary">聯絡電話 <span class="text-red-400">*</span></label>
+                            <input type="tel" name="contactPhone" id="contactPhone" required autocomplete="tel" class="mt-1 block w-full bg-dark-bg border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm text-dark-text-primary placeholder-gray-500" placeholder="例如：13800138000">
+                        </div>
+                    </div>
+                </fieldset>
+                
+                <!-- Terms and Submit -->
+                <div class="pt-5">
+                    <div class="flex items-start mb-4">
+                        <div class="flex items-center h-5">
+                            <input id="terms" name="terms" type="checkbox" required class="focus:ring-sky-500 h-4 w-4 text-sky-600 border-gray-500 rounded bg-dark-bg">
+                        </div>
+                        <div class="ml-3 text-sm">
+                            <label for="terms" class="font-medium text-dark-text-secondary">我確認提交的信息将用於本次物流詢價溝通，并同意透過電話、微信、WhatsApp 或郵箱接收報價回覆。</label>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                        <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-sky-500 hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-bg focus:ring-sky-500 transition-colors">
+                            <i class="fas fa-paper-plane mr-2"></i> 提交詢價
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <!-- Submission Success Message (Initially Hidden) -->
+        <section id="inquiry-success-section" class="mt-12 bg-green-900 bg-opacity-30 border border-green-700 text-green-300 px-4 py-6 rounded-lg text-center hidden" role="status" aria-live="polite">
+            <i class="fas fa-check-circle text-5xl text-green-400 mb-4"></i>
+            <h2 class="text-2xl font-semibold mb-2">詢價已成功提交！</h2>
+            <p>感謝您的詢價。我們的客戶代表將在24小时内與您聯絡，并提供詳細的報價方案。</p>
+            <p class="mt-2 text-sm">您的詢價参考号是: <span id="inquiryRefNo" class="font-bold">INQ-${Date.now().toString().slice(-6)}</span></p>
+            <button id="newInquiryBtn" class="mt-6 px-6 py-2 bg-sky-500 text-white rounded-md hover:bg-sky-600 transition-colors">發起新詢價</button>
+        </section>
+        
+        <!-- Submission Error Message (Initially Hidden) -->
+        <section id="inquiry-error-section" class="mt-12 bg-red-900 bg-opacity-30 border border-red-700 text-red-300 px-4 py-3 rounded-lg relative hidden" role="alert">
+            <strong class="font-bold">提交失敗!</strong>
+            <span class="block sm:inline" id="inquiryErrorMessage"></span>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-card border-t border-dark-border mt-12">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">關於我們</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="about.html#company-profile" class="text-base text-dark-text-secondary hover:text-dark-text-primary">公司簡介</a></li>
+                        <li><a href="about.html#service-advantages" class="text-base text-dark-text-secondary hover:text-dark-text-primary">服務優勢</a></li>
+                        <li><a href="contact.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">聯絡我們</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">核心服務</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="services.html#sea-freight" class="text-base text-dark-text-secondary hover:text-dark-text-primary">國際海運</a></li>
+                        <li><a href="services.html#air-freight" class="text-base text-dark-text-secondary hover:text-dark-text-primary">國際空運</a></li>
+                        <li><a href="services.html#land-transport" class="text-base text-dark-text-secondary hover:text-dark-text-primary">拖車 / 陸運</a></li>
+                        <li><a href="services.html#ecommerce-logistics" class="text-base text-dark-text-secondary hover:text-dark-text-primary">跨境電商物流</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">快速連結</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="tracking.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">貨物查詢</a></li>
+                        <li><a href="inquiry.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">線上詢價</a></li>
+                        <li><a href="news.html" class="text-base text-dark-text-secondary hover:text-dark-text-primary">物流知識</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">聯絡我們</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-map-marker-alt mr-2 text-sky-400"></i> 深圳市龍華區龍華街道富康社區天匯大廈 C 棟 3 樓 308</li>
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-phone-alt mr-2 text-sky-400"></i> +86 13129567120</li>
+                        <li class="text-base text-dark-text-secondary"><i class="fas fa-envelope mr-2 text-sky-400"></i> MichaelZhang@szshiplink.com</li>
+                    </ul>
+                    <p class="text-sm text-dark-text-secondary">微信 / WhatsApp：0086-13129567120</p>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-dark-border pt-8 md:flex md:items-center md:justify-between">
+                <p class="text-base text-dark-text-secondary md:mt-0 md:order-1">
+                    &copy; <span data-current-year></span> 廈普林克國際物流 (深圳) 有限公司. All rights reserved.
+                </p>
+                <p class="mt-4 text-xs text-gray-500 md:mt-0 md:order-2">
+                    專注國際海運、空運、拖車、報關與外貿物流詢價服務。
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
