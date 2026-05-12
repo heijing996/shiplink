@@ -59,7 +59,8 @@ def verify_html(page, lang, marker, html):
     assert marker in html, f"{page} missing marker {marker}"
     for link in LANG_LINKS:
         assert link in html, f"{page} missing {link}"
-    assert "Open main menu" not in html, f"{page} has English sr-only menu text"
+    if lang != "en":
+        assert "Open main menu" not in html, f"{page} has English sr-only menu text"
     assert "fab fa-weixin" not in html and "fab fa-linkedin" not in html, f"{page} has placeholder social icon"
     if "/tracking.html" in page:
         for phrase in FORBIDDEN_TRACKING_PHRASES:
