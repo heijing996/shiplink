@@ -5,6 +5,7 @@ from pathlib import Path
 from threading import Thread
 from urllib.parse import quote
 from urllib.request import urlopen
+import re
 import socket
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -45,8 +46,25 @@ FORBIDDEN_TRACKING_PHRASES = [
 ]
 
 LANG_LINKS = ["hreflang=\"zh-CN\"", "hreflang=\"en\"", "hreflang=\"zh-Hant\""]
+INTERNAL_ROOT_LINK_RE = re.compile(r'href="\.\./(?:services|inquiry|contact)\.html[^"]*"')
+ALLOWED_CROSS_LANGUAGE_TEXT = ('简体', '繁體')
 
 
+def is_allowed_cross_language_link(match, html):
+    tag_start = html.rfind('<', 0, match.start())
+    tag_end = html.find('>', match.end())
+    if tag_start == -1 or tag_end == -1:
+        return False
+    tag = html[tag_start:tag_end + 1]
+    if tag.startswith('<link '):
+        return 'rel="alternate"' in tag
+    if not tag.startswith('<a '):
+        return False
+    end = html.find('</a>', tag_end)
+    if end == -1:
+        return False
+    link_text = html[tag_end + 1:end]
+    return any(text in link_text for text in ALLOWED_CROSS_LANGUAGE_TEXT)
 def read_url(port, page):
     with urlopen(f"http://127.0.0.1:{port}{page}", timeout=5) as response:
         body = response.read().decode("utf-8")
@@ -62,6 +80,9 @@ def verify_html(page, lang, marker, html):
     if lang != "en":
         assert "Open main menu" not in html, f"{page} has English sr-only menu text"
     assert "fab fa-weixin" not in html and "fab fa-linkedin" not in html, f"{page} has placeholder social icon"
+    if page.startswith('/en/') or page.startswith('/zh-hant/'):
+        for match in INTERNAL_ROOT_LINK_RE.finditer(html):
+            assert is_allowed_cross_language_link(match, html), f"{page} has root-language internal link: {match.group(0)}"
     if "/tracking.html" in page:
         for phrase in FORBIDDEN_TRACKING_PHRASES:
             assert phrase not in html, f"{page} still contains misleading tracking phrase: {phrase}"
