@@ -31,30 +31,6 @@
             background-size: cover;
             background-position: center;
         }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -29px; /* Adjust based on icon size and desired spacing */
-            top: 0;
-            width: 2px;
-            height: 100%;
-            background-color: #334155; /* dark-border */
-        }
-        .timeline-item:first-child::before {
-            top: 12px; /* Align with the center of the icon */
-        }
-        .timeline-item:last-child::before {
-            height: 12px; /* Align with the center of the icon */
-        }
-        .timeline-icon {
-            position: absolute;
-            left: -40px; /* Adjust to center the icon on the line */
-            top: 0;
-            transform: translateX(-50%);
-            background-color: #0F172A; /* dark-bg */
-            padding: 4px;
-            border-radius: 50%;
-        }
     </style>
 </head>
 <body class="bg-dark-bg text-dark-text-primary font-sans">
@@ -82,7 +58,7 @@
                 </div>
                 <div class="-mr-2 flex md:hidden">
                     <button type="button" class="bg-dark-card inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu-tracking" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
+                        <span class="sr-only">打开主菜单</span>
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
@@ -107,7 +83,7 @@
         <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
             <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">货物追踪</h1>
             <p class="mt-6 max-w-3xl mx-auto text-xl text-gray-300">
-                实时掌握您的货物动态，全程透明，安心无忧。
+                如需查询货物状态，请通过电话、微信、WhatsApp 或邮箱联系专人核实。页面仅提供人工查询入口说明，不代表实时轨迹系统。
             </p>
         </div>
     </header>
@@ -118,22 +94,26 @@
         <!-- Tracking Input Form -->
         <section id="tracking-form-section" class="bg-dark-card shadow-xl rounded-lg p-6 sm:p-8 md:p-10">
             <h2 class="text-2xl sm:text-3xl font-semibold text-dark-text-primary mb-6 text-center">输入您的追踪号码</h2>
+            <div class="mb-6 rounded-lg border border-yellow-500/40 bg-yellow-500/10 p-4 text-sm text-yellow-100">
+                <i class="fas fa-exclamation-triangle mr-2 text-yellow-400"></i>
+                当前网站未接入船司、航司或第三方实时追踪接口。请通过电话、微信、WhatsApp 或邮箱联系客服人工核实货物状态。
+            </div>
             <form id="trackingForm" class="space-y-6">
                 <div>
-                    <label for="trackingNumber" class="block text-sm font-medium text-dark-text-secondary mb-1">追踪号码 (例如：SHL123456789)</label>
+                    <label for="trackingNumber" class="block text-sm font-medium text-dark-text-secondary mb-1">提单号 / 订单号 / 箱号</label>
                     <div class="mt-1 flex rounded-md shadow-sm">
-                        <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-dark-border bg-gray-700 text-dark-text-secondary text-sm">
-                            <i class="fas fa-barcode mr-2"></i> SHL
-                        </span>
-                        <input type="text" name="trackingNumber" id="trackingNumber" class="flex-1 block w-full rounded-none rounded-r-md bg-dark-bg border-dark-border focus:ring-sky-500 focus:border-sky-500 sm:text-sm p-3 text-dark-text-primary placeholder-gray-500" placeholder="123456789">
+                        <input type="text" name="trackingNumber" id="trackingNumber" class="flex-1 block w-full rounded-md bg-dark-bg border-dark-border focus:ring-sky-500 focus:border-sky-500 sm:text-sm p-3 text-dark-text-primary placeholder-gray-500" placeholder="请输入提单号、订单号或箱号">
                     </div>
-                    <p class="mt-2 text-xs text-gray-400">您可以输入提单号、订单号或箱号进行查询。</p>
+                    <p class="mt-2 text-xs text-gray-400">填写后将展示人工查询说明，真实节点请以客服核实结果为准。</p>
                 </div>
                 
-                <div class="flex justify-center">
+                <div class="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3">
                     <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-sky-500 hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-bg focus:ring-sky-500 transition-colors">
-                        <i class="fas fa-search mr-2"></i> 查询货物
+                        <i class="fas fa-search mr-2"></i> 查看人工查询说明
                     </button>
+                    <a href="contact.html?subject=货物状态查询" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 border border-dark-border text-base font-medium rounded-md shadow-sm text-dark-text-primary bg-dark-bg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-bg focus:ring-sky-500 transition-colors">
+                        <i class="fas fa-headset mr-2"></i> 联系人工查询
+                    </a>
                 </div>
             </form>
         </section>
@@ -141,90 +121,27 @@
         <!-- Tracking Results Section (Initially Hidden) -->
         <section id="tracking-results-section" class="mt-12 bg-dark-card shadow-xl rounded-lg p-6 sm:p-8 md:p-10 hidden">
             <div class="flex justify-between items-center mb-6 pb-4 border-b border-dark-border">
-                <h2 class="text-2xl sm:text-3xl font-semibold text-dark-text-primary">追踪结果: <span id="resultTrackingNumber" class="text-sky-400"></span></h2>
-                <button id="searchAgainBtn" class="text-sm text-sky-400 hover:text-sky-300"><i class="fas fa-redo mr-1"></i> 重新查询</button>
+                <h2 class="text-2xl sm:text-3xl font-semibold text-dark-text-primary">人工查询说明</h2>
+                <button id="searchAgainBtn" class="text-sm text-sky-400 hover:text-sky-300"><i class="fas fa-redo mr-1"></i> 重新填写</button>
             </div>
-
-            <!-- Summary Info -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div class="bg-dark-bg p-4 rounded-lg shadow">
-                    <p class="text-sm text-dark-text-secondary">当前状态</p>
-                    <p id="currentStatus" class="text-lg font-semibold text-green-400">运输途中</p>
-                </div>
-                <div class="bg-dark-bg p-4 rounded-lg shadow">
-                    <p class="text-sm text-dark-text-secondary">起运地 / 目的地</p>
-                    <p id="originDestination" class="text-lg font-semibold text-dark-text-primary">上海 / 洛杉矶</p>
-                </div>
-                <div class="bg-dark-bg p-4 rounded-lg shadow">
-                    <p class="text-sm text-dark-text-secondary">预计到达</p>
-                    <p id="estimatedDelivery" class="text-lg font-semibold text-dark-text-primary">2024年8月5日</p>
-                </div>
+            <div class="rounded-lg border border-sky-500/30 bg-sky-500/10 p-5 text-sm text-sky-100">
+                <p class="text-base text-dark-text-primary font-medium">网站未接入实时追踪接口。请通过电话、微信、WhatsApp 或邮箱联系人工客服，并提供提单号、订单号或箱号以便核实货物状态。</p>
+                <p class="mt-3">为便于快速核实，请准备以下信息：</p>
+                <ul class="mt-3 space-y-2 list-disc list-inside text-dark-text-secondary">
+                    <li>提单号 / 订单号 / 箱号</li>
+                    <li>起运地 / 目的地</li>
+                    <li>联系人</li>
+                    <li>电话 / 微信 / WhatsApp</li>
+                </ul>
+                <a href="contact.html?subject=货物状态查询" class="mt-5 inline-flex items-center justify-center rounded-md bg-sky-500 px-5 py-3 text-sm font-medium text-white hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-card focus:ring-sky-500">
+                    <i class="fas fa-headset mr-2"></i> 联系人工核实
+                </a>
             </div>
-
-            <!-- Detailed Timeline -->
-            <h3 class="text-xl font-semibold text-dark-text-primary mb-6">详细动态</h3>
-            <div class="relative pl-8">
-                <!-- Timeline Item 1 -->
-                <div class="timeline-item relative pb-8">
-                    <div class="timeline-icon">
-                        <i class="fas fa-check-circle text-green-400 text-2xl"></i>
-                    </div>
-                    <div class="ml-4">
-                        <p class="font-semibold text-dark-text-primary">已揽收</p>
-                        <p class="text-sm text-dark-text-secondary">货物已从发货人处揽收，准备离港。</p>
-                        <p class="text-xs text-gray-400 mt-1">上海, 中国 - 2024年7月20日 14:30</p>
-                    </div>
-                </div>
-                <!-- Timeline Item 2 -->
-                <div class="timeline-item relative pb-8">
-                    <div class="timeline-icon">
-                        <i class="fas fa-ship text-sky-400 text-2xl"></i>
-                    </div>
-                    <div class="ml-4">
-                        <p class="font-semibold text-dark-text-primary">已离港</p>
-                        <p class="text-sm text-dark-text-secondary">货物已装船/机，离开上海港/机场。</p>
-                        <p class="text-xs text-gray-400 mt-1">上海港, 中国 - 2024年7月22日 08:00</p>
-                    </div>
-                </div>
-                <!-- Timeline Item 3 -->
-                <div class="timeline-item relative pb-8">
-                    <div class="timeline-icon">
-                        <i class="fas fa-route text-sky-400 text-2xl"></i>
-                    </div>
-                    <div class="ml-4">
-                        <p class="font-semibold text-dark-text-primary">运输途中</p>
-                        <p class="text-sm text-dark-text-secondary">货物正在运往目的地途中，当前位置：太平洋中部。</p>
-                        <p class="text-xs text-gray-400 mt-1">太平洋 - 2024年7月28日 10:15</p>
-                    </div>
-                </div>
-                <!-- Timeline Item 4 (Example of future event) -->
-                <div class="timeline-item relative pb-0">
-                    <div class="timeline-icon">
-                        <i class="fas fa-hourglass-half text-yellow-400 text-2xl"></i>
-                    </div>
-                    <div class="ml-4">
-                        <p class="font-semibold text-dark-text-primary">预计抵达</p>
-                        <p class="text-sm text-dark-text-secondary">货物预计抵达洛杉矶港/机场。</p>
-                        <p class="text-xs text-gray-400 mt-1">洛杉矶港, 美国 - 2024年8月5日 (预计)</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Map Placeholder (Optional) -->
-            <div class="mt-10">
-                <h3 class="text-xl font-semibold text-dark-text-primary mb-4">货物位置 (示意图)</h3>
-                <div class="bg-dark-bg rounded-lg h-64 flex items-center justify-center text-dark-text-secondary">
-                    <!-- 图片来源: https://www.pexels.com/photo/blue-and-red-map-illustration-547114/ -->
-                    <img src="https://images.pexels.com/photos/547114/pexels-photo-547114.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="货物位置地图示意图" class="object-cover h-full w-full rounded-lg opacity-70">
-                    <span class="absolute text-white text-lg font-medium bg-black bg-opacity-50 p-2 rounded">地图功能开发中</span>
-                </div>
-            </div>
-
         </section>
         
         <!-- Error Message Section (Initially Hidden) -->
         <section id="tracking-error-section" class="mt-12 bg-red-900 bg-opacity-30 border border-red-700 text-red-300 px-4 py-3 rounded-lg relative hidden" role="alert">
-            <strong class="font-bold">查询失败!</strong>
+            <strong class="font-bold">信息不完整</strong>
             <span class="block sm:inline" id="errorMessage"></span>
         </section>
 
@@ -266,10 +183,7 @@
                         <li class="text-base text-dark-text-secondary"><i class="fas fa-phone-alt mr-2 text-sky-400"></i> +86 13129567120</li>
                         <li class="text-base text-dark-text-secondary"><i class="fas fa-envelope mr-2 text-sky-400"></i> MichaelZhang@szshiplink.com</li>
                     </ul>
-                    <div class="mt-6 flex space-x-6">
-                        <a href="contact.html" class="text-gray-400 hover:text-gray-300"><span class="sr-only">微信公众号</span><i class="fab fa-weixin fa-lg"></i></a>
-                        <a href="contact.html" class="text-gray-400 hover:text-gray-300"><span class="sr-only">LinkedIn</span><i class="fab fa-linkedin fa-lg"></i></a>
-                    </div>
+                    <p class="mt-6 text-sm text-dark-text-secondary">微信 / WhatsApp：0086-13129567120</p>
                 </div>
             </div>
             <div class="mt-8 border-t border-dark-border pt-8 md:flex md:items-center md:justify-between">
@@ -284,19 +198,18 @@
     </footer>
 
     <script>
-        // Tracking form submission simulation
+        // Tracking form submission handling
         const trackingForm = document.getElementById('trackingForm');
         const trackingFormSection = document.getElementById('tracking-form-section');
+        const trackingNumberInput = document.getElementById('trackingNumber');
         const trackingResultsSection = document.getElementById('tracking-results-section');
         const trackingErrorSection = document.getElementById('tracking-error-section');
-        const resultTrackingNumber = document.getElementById('resultTrackingNumber');
         const errorMessage = document.getElementById('errorMessage');
         const searchAgainBtn = document.getElementById('searchAgainBtn');
 
-        if (trackingForm) {
+        if (trackingForm && trackingNumberInput && trackingResultsSection && trackingErrorSection && errorMessage) {
             trackingForm.addEventListener('submit', function(event) {
                 event.preventDefault();
-                const trackingNumberInput = document.getElementById('trackingNumber');
                 const trackingNo = trackingNumberInput.value.trim();
 
                 // Clear previous messages
@@ -304,35 +217,28 @@
                 errorMessage.textContent = '';
 
                 if (!trackingNo) {
-                    errorMessage.textContent = '请输入追踪号码。';
+                    errorMessage.textContent = '请输入提单号、订单号或箱号。';
                     trackingErrorSection.classList.remove('hidden');
                     return;
                 }
 
-                // Simulate API call & display results
-                // In a real app, this would be an AJAX request
-                console.log('Simulating tracking for:', 'SHL' + trackingNo);
-                // For prototype, always show success for a valid-looking number
-                if (trackingNo.match(/^\d{9}$/)) { // Example: 9 digits
-                    resultTrackingNumber.textContent = 'SHL' + trackingNo;
+                if (trackingFormSection) {
                     trackingFormSection.classList.add('hidden');
-                    trackingResultsSection.classList.remove('hidden');
-                } else if (trackingNo === 'ERROR123') { // Simulate an error case
-                     errorMessage.textContent = '无法找到该追踪号码 (ERROR123) 的信息，请检查后重试。';
-                    trackingErrorSection.classList.remove('hidden');
-                } else {
-                    errorMessage.textContent = '追踪号码格式不正确，或未找到相关信息。请输入有效的9位数字号码。';
-                    trackingErrorSection.classList.remove('hidden');
                 }
+                trackingResultsSection.classList.remove('hidden');
             });
         }
 
-        if (searchAgainBtn) {
+        if (searchAgainBtn && trackingResultsSection && trackingErrorSection) {
             searchAgainBtn.addEventListener('click', () => {
                 trackingResultsSection.classList.add('hidden');
                 trackingErrorSection.classList.add('hidden');
-                trackingFormSection.classList.remove('hidden');
-                if (trackingForm) trackingForm.reset();
+                if (trackingFormSection) {
+                    trackingFormSection.classList.remove('hidden');
+                }
+                if (trackingForm) {
+                    trackingForm.reset();
+                }
             });
         }
 

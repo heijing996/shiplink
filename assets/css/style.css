@@ -135,10 +135,6 @@ article.bg-dark-card > div:first-child > div:first-child {
     box-shadow: 0 12px 28px rgba(14, 165, 233, 0.22);
 }
 
-main a[class*="bg-sky"],
-main a[class*="border-sky"] {
-    min-height: 44px;
-}
 
 img {
     background-color: #1E293B;
@@ -150,6 +146,12 @@ footer {
 
 .map-placeholder {
     border: 1px solid rgba(51, 65, 85, 0.85);
+}
+
+@media (max-width: 767px) {
+    body.has-mobile-sticky-cta {
+        padding-bottom: 76px;
+    }
 }
 
 @media (max-width: 640px) {
@@ -194,10 +196,6 @@ footer {
         padding: 1.25rem;
     }
 
-    main a[class*="bg-sky"],
-    main a[class*="border-sky"] {
-        width: 100%;
-    }
 
     footer .grid {
         row-gap: 2rem;
